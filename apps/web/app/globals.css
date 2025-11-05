@@ -48,6 +48,7 @@
   --radius-lg: calc(var(--radius) + 0.25rem);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-roman: var(--font-roman);
 }
 
 body {
@@ -103,5 +104,10 @@ body {
   /* Convenience: `border-input` maps to input token */
   :where(.border-input) {
     border-color: var(--color-input);
+  }
+
+  /* Font Roman utility class */
+  .font-roman {
+    font-family: var(--font-roman), "Times New Roman", serif;
   }
 }

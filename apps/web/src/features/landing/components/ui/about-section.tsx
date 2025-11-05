@@ -30,7 +30,7 @@ const AboutSection = ({
     <section className="py-32" id="about">
       <div className="container">
         <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
-          <h1 className="text-5xl font-semibold">{t("title")}</h1>
+          <h1 className="text-5xl font-semibold font-roman">{t("title")}</h1>
           <p className="text-muted-foreground">{t("description")}</p>
         </div>
         <div className="grid gap-7 lg:grid-cols-3">
@@ -85,7 +85,7 @@ const AboutSection = ({
         </div>
         <div className="bg-muted relative overflow-hidden rounded-xl p-7 md:p-16 mt-14">
           <div className="flex flex-col gap-4 text-center md:text-left">
-            <h2 className="text-3xl font-semibold md:text-4xl">
+            <h2 className="text-3xl font-semibold md:text-4xl font-roman">
               {t("achievements.title")}
             </h2>
             <p className="text-muted-foreground max-w-xl">

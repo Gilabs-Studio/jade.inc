@@ -11,7 +11,7 @@ const UseCasesSection = () => {
     <section className="py-32" id="use-cases">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("title")}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">{t("title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t("subtitle")}
           </p>
@@ -44,7 +44,7 @@ const UseCasesSection = () => {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors font-roman">
                     {useCase.title}
                   </h3>
 

@@ -11,7 +11,7 @@ const ServicesSection = () => {
     <section className="py-32 bg-muted/30" id="services">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("title")}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">{t("title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t("subtitle")}
           </p>
@@ -78,7 +78,7 @@ const ServicesSection = () => {
                     )}
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 font-roman">{service.title}</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {service.description}
                   </p>

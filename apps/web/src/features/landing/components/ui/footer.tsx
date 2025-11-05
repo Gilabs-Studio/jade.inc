@@ -18,7 +18,7 @@ const Footer = () => {
                   J
                 </span>
               </div>
-              <h3 className="text-xl font-bold">{t("address.title")}</h3>
+              <h3 className="text-xl font-bold font-roman">{t("address.title")}</h3>
             </div>
             <address className="not-italic text-muted-foreground space-y-1">
               <p>{t("address.line1")}</p>

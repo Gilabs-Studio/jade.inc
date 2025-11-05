@@ -27,7 +27,7 @@ const ContactSection = () => {
       <div className="container">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">
               {t("title")}
             </h2>
             <p className="text-xl text-muted-foreground">{t("subtitle")}</p>
