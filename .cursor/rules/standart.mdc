@@ -8,7 +8,7 @@ Technology baseline
 - Use Tailwind CSS v4. Simplified setup with `@import "tailwindcss"`, automatic content detection, and modern CSS features. See `https://tailwindcss.com/blog/tailwindcss-v4`.
 
 Folder structure (per feature)
-- Place features under `apps/frontend/src/features/<featureName>/`:
+- Place features under `apps/web/src/features/<featureName>/`:
   - `types/` — only type declarations. Prefer `index.d.ts` or topic-based `*.d.ts`.
   - `stores/` — Zustand state. One store per domain, named `use<Domain>Store.ts`.
   - `hooks/` — feature-scoped React hooks, named `use<Thing>.ts`.
