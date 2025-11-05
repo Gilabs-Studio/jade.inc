@@ -15,6 +15,7 @@
       "utils": "@/lib/utils"
     },
     "registries": {
+      "@react-bits": "https://reactbits.dev/r/{name}.json",
       "@magic-ui": "https://magicui.design/r/{name}.json",
       "@originui": "https://originui.com/r/{name}.json",
       "@aceternity": "https://ui.aceternity.com/registry/{name}.json",

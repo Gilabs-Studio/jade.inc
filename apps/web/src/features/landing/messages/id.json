@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "title": "Mitra riset pemasaran dan koordinasi Anda",
+    "subtitle": "Spesialis koordinasi",
+    "description": "Terkadang sulit untuk melakukan riset lapangan atau pengaturan di Indonesia, Filipina, dan Singapura. Kami mendukung bisnis Anda.",
+    "cta": "Mulai Sekarang",
+    "contactCta": "Hubungi Kami"
+  },
+  "services": {
+    "title": "Layanan Kami",
+    "subtitle": "Solusi komprehensif untuk kebutuhan bisnis Anda",
+    "items": [
+      {
+        "title": "Riset Pemasaran",
+        "description": "Sulit untuk mengatur dan melakukan survei di Indonesia, Filipina, dan Singapura. Kami menghilangkan semua kesulitan Anda dalam pengaturan.",
+        "cta": "Pelajari Lebih Lanjut"
+      },
+      {
+        "title": "Pengaturan Perjalanan",
+        "description": "Kami mengurus semuanya dan Anda cukup duduk santai.",
+        "cta": "Pelajari Lebih Lanjut"
+      },
+      {
+        "title": "Sewa Drone",
+        "description": "Rekaman drone sangat bagus tetapi Anda mungkin merasa sulit menemukan yang bagus. Anda cukup merekam rekaman orisinal Anda bersama kami. Kami memiliki staf yang terampil.",
+        "cta": "Pelajari Lebih Lanjut"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Studi Kasus Riset Pemasaran",
+    "subtitle": "Contoh nyata dari proyek kami yang berhasil",
+    "items": [
+      {
+        "title": "Melakukan survei di seluruh Indonesia",
+        "client": "Produsen besar",
+        "type": "Wawancara mendalam (Kunjungan rumah dan Store shadowing)",
+        "period": "Total 7 hari",
+        "size": "9 sampel",
+        "cta": "Pelajari Lebih Lanjut"
+      },
+      {
+        "title": "Mengelola orang dengan perangkat terbaru",
+        "client": "FMCG Global",
+        "type": "Survei online dan uji produk sampel",
+        "period": "Total 6 hari",
+        "size": "24 sampel",
+        "cta": "Pelajari Lebih Lanjut"
+      },
+      {
+        "title": "Menangani survei dengan ibu dan anak-anak",
+        "client": "FMCG Global",
+        "type": "Survei online",
+        "period": "Total 3 hari",
+        "size": "18 orang tua dan 18 anak",
+        "cta": "Pelajari Lebih Lanjut"
+      }
+    ]
+  },
+  "about": {
+    "title": "Tentang kami",
+    "description": "Sejak 2016, kami telah melayani pelanggan kami dengan manajemen lapangan. Keahlian kami adalah dalam jaringan bisnis kami. Di Indonesia, Filipina, dan Singapura, Anda memerlukan jaringan yang tepat untuk menjalankan tugas Anda.",
+    "achievements": {
+      "title": "Pencapaian Kami dalam Angka",
+      "description": "Membangun kepercayaan melalui hasil yang terbukti dan klien yang puas di seluruh Asia Tenggara.",
+      "items": [
+        {
+          "label": "Proyek Selesai",
+          "value": "500+"
+        },
+        {
+          "label": "Klien Puas",
+          "value": "100+"
+        },
+        {
+          "label": "Negara Tercakup",
+          "value": "3"
+        },
+        {
+          "label": "Tahun Pengalaman",
+          "value": "9+"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Kontak",
+    "subtitle": "Hubungi kami",
+    "form": {
+      "name": "Nama",
+      "email": "Email",
+      "message": "Pesan",
+      "submit": "Kirim Pesan"
+    }
+  },
+  "footer": {
+    "address": {
+      "title": "Jade Inc",
+      "line1": "Office Suite A529,",
+      "line2": "Mall Epicentrum Walk Lt.5, Jl.HR Rasuna Said",
+      "line3": "Jakarta Selatan 12940 Indonesia"
+    },
+    "contact": {
+      "whatsapp": "+62 812 1253 5365"
+    },
+    "recentPosts": {
+      "title": "Postingan Terbaru",
+      "items": [
+        {
+          "title": "Menargetkan subjek spesifik",
+          "date": "18 Januari 2021"
+        },
+        {
+          "title": "Pentingnya QC dalam rekrutmen",
+          "date": "3 Januari 2021"
+        },
+        {
+          "title": "Halo dari Jakarta",
+          "date": "16 November 2020"
+        }
+      ]
+    },
+    "copyright": "© 2025 Jade Inc"
+  }
+}

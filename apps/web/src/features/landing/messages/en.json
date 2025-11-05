@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "title": "Your marketing research and coordination partner",
+    "subtitle": "Coordination specialist",
+    "description": "It's sometimes difficult to conduct a field research or arrangement in Indonesia, Philippines and Singapore. We support your business.",
+    "cta": "Get Started",
+    "contactCta": "Contact Us"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for your business needs",
+    "items": [
+      {
+        "title": "Marketing Research",
+        "description": "It's tough to make an arrangement and conduct a survey in Indonesia, Philippines and Singapore. We get rid of all of your pain in arrangement.",
+        "cta": "Learn More"
+      },
+      {
+        "title": "Travel Arrangement",
+        "description": "We take care of all and you just sit relaxed.",
+        "cta": "Learn More"
+      },
+      {
+        "title": "Drone Rental",
+        "description": "Drone footage is great but you may think it's hard to find a good one. You just shoot your original footage with us. We have a skilled staffer.",
+        "cta": "Learn More"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Marketing Research Use Case",
+    "subtitle": "Real-world examples of our successful projects",
+    "items": [
+      {
+        "title": "Conducting survey across Indonesia",
+        "client": "Major manufacturer",
+        "type": "In-depth interview (Home visit and Store shadowing)",
+        "period": "Total 7 days",
+        "size": "9 samples",
+        "cta": "Learn More"
+      },
+      {
+        "title": "Managing people with the latest device",
+        "client": "Global FMCG",
+        "type": "Online survey and sample product testing",
+        "period": "Total 6 days",
+        "size": "24 samples",
+        "cta": "Learn More"
+      },
+      {
+        "title": "Handling survey with mom and kids",
+        "client": "Global FMCG",
+        "type": "Online survey",
+        "period": "Total 3 days",
+        "size": "18 parents and 18 kids",
+        "cta": "Learn More"
+      }
+    ]
+  },
+  "about": {
+    "title": "About us",
+    "description": "Since 2016, we have served our customers with field management. Our speciality is in our business networks. In Indonesia, Pilippines and Singapore, you need an appropriate network to execute your task.",
+    "achievements": {
+      "title": "Our Achievements in Numbers",
+      "description": "Building trust through proven results and satisfied clients across Southeast Asia.",
+      "items": [
+        {
+          "label": "Projects Completed",
+          "value": "500+"
+        },
+        {
+          "label": "Happy Clients",
+          "value": "100+"
+        },
+        {
+          "label": "Countries Covered",
+          "value": "3"
+        },
+        {
+          "label": "Years of Experience",
+          "value": "9+"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "address": {
+      "title": "Jade Inc",
+      "line1": "Office Suite A529,",
+      "line2": "Mall Epicentrum Walk Lt.5, Jl.HR Rasuna Said",
+      "line3": "Jakarta Selatan 12940 Indonesia"
+    },
+    "contact": {
+      "whatsapp": "+62 812 1253 5365"
+    },
+    "recentPosts": {
+      "title": "Recent Posts",
+      "items": [
+        {
+          "title": "Targeting specific subject",
+          "date": "January 18, 2021"
+        },
+        {
+          "title": "The importance of QC in recruitment",
+          "date": "January 3, 2021"
+        },
+        {
+          "title": "Hello from Jakarta",
+          "date": "November 16, 2020"
+        }
+      ]
+    },
+    "copyright": "© 2025 Jade Inc"
+  }
+}
