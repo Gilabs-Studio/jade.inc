@@ -47,8 +47,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
     </section>
   );
 };
