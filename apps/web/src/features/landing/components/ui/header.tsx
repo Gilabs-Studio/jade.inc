@@ -3,18 +3,23 @@
 import { Link } from "@/src/lib/i18n";
 import { LanguageSwitcher } from "./language-switcher";
 import { useState } from "react";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-xl font-bold text-primary-foreground">J</span>
-          </div>
-          <span className="text-xl font-bold">Jade Inc</span>
+          <Image
+            src="/logo_g.svg"
+            alt="Jade Inc"
+            width={120}
+            height={20}
+            className="h-5 w-auto"
+            priority
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
@@ -76,7 +81,7 @@ const Header = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="md:hidden border-t bg-background">
+        <div className="md:hidden bg-background">
           <div className="container px-4 py-4 flex flex-col gap-4">
             <Link
               href="#services"
