@@ -75,12 +75,12 @@ const ServicesSection = () => {
 
   useEffect(() => {
     const loadAnimations = async () => {
-      const [knowledge, drone, travel] = await Promise.all([
+      const [knowledge, travel, drone] = await Promise.all([
         fetch("/icon/knowledge.json").then((res) => res.json()),
-        fetch("/icon/drone.json").then((res) => res.json()),
         fetch("/icon/travel.json").then((res) => res.json()),
+        fetch("/icon/drone.json").then((res) => res.json()),
       ]);
-      setAnimations([knowledge, drone, travel]);
+      setAnimations([knowledge, travel, drone]);
     };
     loadAnimations();
   }, []);
