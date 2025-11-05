@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jade Inc - Your Marketing Research and Coordination Partner",
+  title: "Jade Inc",
   description:
     "Coordination specialist for field research and arrangement in Indonesia, Philippines and Singapore. We support your business with marketing research, travel arrangement, and drone rental services.",
 };
