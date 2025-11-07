@@ -93,7 +93,7 @@ const ContactSection = () => {
               </Button>
             </form>
 
-            <div className="mt-8 pt-8 border-t text-center">
+            <div className="mt-8 pt-8 border-t border-thin text-center">
               <p className="text-sm text-muted-foreground mb-4">
                 Or reach us directly via WhatsApp
               </p>
