@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Layanan Riset Pasar Lapangan",
+    "description": "Sulit untuk membuat pengaturan dan melakukan survei di Indonesia, Filipina dan Singapura. Kami mengakui ada beberapa masalah, misalnya dalam rekrutmen, di mana masih banyak area yang sulit dijangkau karena keterbatasan transportasi atau komunikasi, yang muncul baik karena koneksi internet terbatas atau akses ke perangkat atau hambatan lainnya. Kami dapat menangani situasi tersebut."
+  },
+  "markets": {
+    "title": "Cakupan Pasar Kami",
+    "description": "Jade Inc. merekrut untuk tujuan Riset Pasar untuk membantu Anda terhubung dengan Konsumen dan Ahli di pasar Indonesia, Filipina dan Singapura. Kami melakukan rekrutmen responden secara tatap muka baik melalui referensi atau menggunakan basis data kami.",
+    "philippines": {
+      "title": "Pasar Filipina",
+      "description": "Pasar Filipina kami mencakup Manila, Cebu, Davao, dan banyak lainnya, yang berbicara dialek berbeda seperti Tagalog dan Cebuano."
+    }
+  },
+  "services": {
+    "title": "Yang Kami Lakukan",
+    "items": [
+      {
+        "title": "IDIs | FGDs | CLTs | Survei Online"
+      },
+      {
+        "title": "Etnografi | Kunjungan Rumah | Imersi | Imersi Klien"
+      },
+      {
+        "title": "Shop-Alongs | Travel-Alongs | Diary | Tugas"
+      }
+    ]
+  },
+  "projectManagement": {
+    "title": "Manajemen Proyek",
+    "subtitle": "PM kami mengatur untuk",
+    "categories": [
+      {
+        "category": "Layanan Inti",
+        "items": [
+          "Rekrutmen",
+          "Insentif",
+          "Tempat",
+          "Penyegaran"
+        ]
+      },
+      {
+        "category": "Layanan Pendukung",
+        "items": [
+          "Moderator",
+          "Penerjemah",
+          "Pencatatan"
+        ]
+      },
+      {
+        "category": "Dokumentasi & Logistik",
+        "items": [
+          "Transkrip",
+          "Transportasi",
+          "Dokumentasi"
+        ]
+      },
+      {
+        "category": "Perjalanan & Akomodasi",
+        "items": [
+          "Tiket",
+          "Akomodasi",
+          "Logistik"
+        ]
+      }
+    ]
+  },
+  "onlineSurveys": {
+    "title": "Survei Online",
+    "description": "Kami berpengalaman dan percaya diri untuk bekerja dengan Platform Riset Online, seperti:",
+    "platforms": [
+      "Conceptualizer",
+      "Revelation",
+      "Point Logic",
+      "StoryTagger",
+      "Civicom",
+      "Dan banyak lainnya"
+    ]
+  }
+}
+
+
+

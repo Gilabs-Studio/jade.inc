@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Marketing Research Field Services",
+    "description": "It's tough to make an arrangement and conduct a survey in Indonesia, Philippines and Singapore. We admit there are some issues, for instance in recruitment, where there are still many areas that are difficult to reach due to limitations in transportation or communication, which arise either due to limited internet connection or access to devices or other obstacles. We can handle the situation."
+  },
+  "markets": {
+    "title": "Our Market Coverage",
+    "description": "Jade Inc. recruits for Market Research purposes to help you connect to Consumers and Experts in Indonesia, Philippines and Singapore market. We do our respondents recruitment face to face either via referral or using our data base.",
+    "philippines": {
+      "title": "Philippines Market",
+      "description": "Our Philippines market covers Manila, Cebu, Davao, and many others, that speaks different dialect such as Tagalog and Cebuano."
+    }
+  },
+  "services": {
+    "title": "Things We Do",
+    "items": [
+      {
+        "title": "IDIs | FGDs | CLTs | Online Survey"
+      },
+      {
+        "title": "Ethnography | Inhomes | Immersions | Client Immersions"
+      },
+      {
+        "title": "Shop-Alongs | Travel-Alongs | Diary | Tasks"
+      }
+    ]
+  },
+  "projectManagement": {
+    "title": "Project Management",
+    "subtitle": "Our PM arranges for",
+    "categories": [
+      {
+        "category": "Core Services",
+        "items": [
+          "Recruitment",
+          "Incentives",
+          "Venues",
+          "Refreshments"
+        ]
+      },
+      {
+        "category": "Support Services",
+        "items": [
+          "Moderators",
+          "Translators",
+          "Note Taking"
+        ]
+      },
+      {
+        "category": "Documentation & Logistics",
+        "items": [
+          "Transcripts",
+          "Transports",
+          "Documentations"
+        ]
+      },
+      {
+        "category": "Travel & Accommodation",
+        "items": [
+          "Ticketing",
+          "Accommodation",
+          "Logistics"
+        ]
+      }
+    ]
+  },
+  "onlineSurveys": {
+    "title": "Online Surveys",
+    "description": "We are experienced and confident to work with Online Research Platform, such as:",
+    "platforms": [
+      "Conceptualizer",
+      "Revelation",
+      "Point Logic",
+      "StoryTagger",
+      "Civicom",
+      "And many others"
+    ]
+  }
+}
+
+
+

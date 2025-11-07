@@ -8,10 +8,24 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = routing.defaultLocale;
   }
 
-  const messages =
+  // Import messages from both features
+  const landingMessages =
     locale === "en"
       ? (await import("@/src/features/landing/messages/en.json")).default
       : (await import("@/src/features/landing/messages/id.json")).default;
+
+  const marketingResearchMessages =
+    locale === "en"
+      ? (await import("@/src/features/marketing-research/messages/en.json"))
+          .default
+      : (await import("@/src/features/marketing-research/messages/id.json"))
+          .default;
+
+  // Merge messages
+  const messages = {
+    ...landingMessages,
+    marketingResearch: marketingResearchMessages,
+  };
 
   return {
     locale,

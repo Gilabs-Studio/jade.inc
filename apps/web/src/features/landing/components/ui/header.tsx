@@ -24,6 +24,12 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-6">
           <Link
+            href="/marketing-research"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            Field Services
+          </Link>
+          <Link
             href="#services"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
@@ -83,6 +89,13 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background">
           <div className="container px-4 py-4 flex flex-col gap-4">
+            <Link
+              href="/marketing-research"
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Marketing Research
+            </Link>
             <Link
               href="#services"
               className="text-sm font-medium hover:text-primary transition-colors"
