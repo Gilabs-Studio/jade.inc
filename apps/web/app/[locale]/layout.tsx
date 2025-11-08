@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/src/lib/i18n/routing";
+import { Header, Footer } from "@/src/features/landing/components/ui";
 
 export const metadata: Metadata = {
   title: "Jade Inc",
@@ -27,7 +28,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <div lang={locale}>{children}</div>
+      <div lang={locale}>
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </NextIntlClientProvider>
   );
 }

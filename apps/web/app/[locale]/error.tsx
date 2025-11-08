@@ -2,19 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "@/src/lib/i18n";
-import { Header } from "@/src/features/landing/components/ui";
-import dynamic from "next/dynamic";
 import { useEffect } from "react";
-
-const Footer = dynamic(
-  () =>
-    import("@/src/features/landing/components/ui").then(
-      (mod) => ({ default: mod.Footer })
-    ),
-  {
-    ssr: false,
-  }
-);
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -28,9 +16,7 @@ export default function Error({ error, reset }: ErrorProps) {
   }, [error]);
 
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
+    <main className="min-h-screen">
         <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-16">
           <div
             className="absolute inset-0 bg-cover bg-no-repeat opacity-4 -z-10"
@@ -70,9 +56,7 @@ export default function Error({ error, reset }: ErrorProps) {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
+    </main>
   );
 }
 

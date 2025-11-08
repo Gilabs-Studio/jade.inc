@@ -1,7 +1,5 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import { Header } from "@/src/features/landing/components/ui";
-import { Footer } from "@/src/features/landing/components/ui";
 
 export const metadata: Metadata = {
   title: "Travel - Business Travel Arrangement Services | Jade Inc",
@@ -74,14 +72,10 @@ const ServicesSection = dynamic(
 
 export default function TravelArrangementPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <ServicesSection />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen">
+      <HeroSection />
+      <ServicesSection />
+    </main>
   );
 }
 

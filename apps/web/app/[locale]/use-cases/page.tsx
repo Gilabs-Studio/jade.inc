@@ -1,7 +1,5 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import { Header } from "@/src/features/landing/components/ui";
-import { Footer } from "@/src/features/landing/components/ui";
 
 export const metadata: Metadata = {
   title: "Solutions - Use Cases & Success Stories | Jade Inc",
@@ -83,14 +81,10 @@ const UseCasesGrid = dynamic(
 
 export default function UseCasesPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <UseCasesGrid />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen">
+      <HeroSection />
+      <UseCasesGrid />
+    </main>
   );
 }
 

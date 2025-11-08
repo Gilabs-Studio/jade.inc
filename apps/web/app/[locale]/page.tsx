@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import { Header, HeroSection } from "@/src/features/landing/components/ui";
+import { HeroSection } from "@/src/features/landing/components/ui";
 
 export const metadata: Metadata = {
   title: "Jade Inc - Field Research & Coordination Services",
@@ -128,44 +128,14 @@ const ContactSection = dynamic(
   }
 );
 
-const Footer = dynamic(
-  () =>
-    import("@/src/features/landing/components/ui").then(
-      (mod) => ({ default: mod.Footer })
-    ),
-  {
-    loading: () => (
-      <footer className="bg-card border-t">
-        <div className="container py-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="space-y-4">
-                <div className="h-6 w-32 bg-muted rounded animate-pulse" />
-                <div className="space-y-2">
-                  <div className="h-4 w-full bg-muted rounded animate-pulse" />
-                  <div className="h-4 w-3/4 bg-muted rounded animate-pulse" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </footer>
-    ),
-  }
-);
-
 export default function LandingPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <ServicesSection />
-        <UseCasesSection />
-        <AboutSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen">
+      <HeroSection />
+      <ServicesSection />
+      <UseCasesSection />
+      <AboutSection />
+      <ContactSection />
+    </main>
   );
 }

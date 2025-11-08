@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import { Header, Footer } from "@/src/features/landing/components/ui";
 
 export const metadata: Metadata = {
   title: "Field Services - Marketing Research & Data Collection | Jade Inc",
@@ -130,19 +129,34 @@ const OnlineSurveysSection = dynamic(
   }
 );
 
+const SoutheastAsiaMapSection = dynamic(
+  () =>
+    import("@/src/features/marketing-research/components/ui").then(
+      (mod) => ({ default: mod.SoutheastAsiaMap })
+    ),
+  {
+    loading: () => (
+      <section className="py-32">
+        <div className="container">
+          <div className="h-12 w-64 bg-muted rounded-lg mx-auto mb-16 animate-pulse" />
+          <div className="h-6 w-96 bg-muted rounded-lg mx-auto mb-8 animate-pulse" />
+          <div className="bg-card border rounded-xl p-12 h-96 animate-pulse max-w-5xl mx-auto" />
+        </div>
+      </section>
+    ),
+  }
+);
+
 export default function MarketingResearchPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <MarketsSection />
-        <ServicesSection />
-        <ProjectManagementSection />
-        <OnlineSurveysSection />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen">
+      <HeroSection />
+      <SoutheastAsiaMapSection />
+      <MarketsSection />
+      <ServicesSection />
+      <ProjectManagementSection />
+      <OnlineSurveysSection />
+    </main>
   );
 }
 

@@ -1,7 +1,5 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import { Header } from "@/src/features/landing/components/ui";
-import { Footer } from "@/src/features/landing/components/ui";
 
 export const metadata: Metadata = {
   title: "Drones - Professional Drone Pilot Services | Jade Inc",
@@ -75,14 +73,10 @@ const ContentSection = dynamic(
 
 export default function DronePilotServicePage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <ContentSection />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen">
+      <HeroSection />
+      <ContentSection />
+    </main>
   );
 }
 
