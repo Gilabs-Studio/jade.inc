@@ -44,6 +44,40 @@ const HeroSection = dynamic(
   }
 );
 
+const ServiceBreakdownSection = dynamic(
+  () =>
+    import("@/src/features/drone-pilot-service/components/ui").then(
+      (mod) => ({ default: mod.ServiceBreakdownSection })
+    ),
+  {
+    loading: () => (
+      <section className="py-20 md:py-28 lg:py-40 bg-background">
+        <div className="container">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="relative">
+                <div className="aspect-[4/3] bg-muted rounded-3xl animate-pulse" />
+              </div>
+              <div className="space-y-6">
+                <div className="h-16 w-3/4 bg-muted rounded-lg animate-pulse" />
+                <div className="h-6 w-full bg-muted rounded-lg animate-pulse" />
+                <div className="space-y-4">
+                  {[1, 2, 3].map((i) => (
+                    <div
+                      key={i}
+                      className="bg-card border rounded-2xl p-8 h-32 animate-pulse"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    ),
+  }
+);
+
 const ContentSection = dynamic(
   () =>
     import("@/src/features/drone-pilot-service/components/ui").then(
@@ -75,6 +109,7 @@ export default function DronePilotServicePage() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <ServiceBreakdownSection />
       <ContentSection />
     </main>
   );

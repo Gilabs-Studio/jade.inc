@@ -3,52 +3,92 @@
     "title": "Drone Pilot Service",
     "description": "Ang drone footage ay napakaganda ngunit maaari ninyong isipin na mahirap makahanap ng maganda. Kayo lamang ang mag-shoot ng inyong original footage kasama namin. Mayroon kaming bihasang staffer."
   },
+  "serviceBreakdown": {
+    "title": "Propesyonal na Serbisyo ng Drone",
+    "description": "Espesyalisadong serbisyo ng aerial photography at videography na may state-of-the-art na kagamitan at sertipikadong mga pilot.",
+    "features": [
+      {
+        "title": "Propesyonal na Kagamitan",
+        "description": "DJI Mavic 2 Pro na may Hasselblad camera para sa kamangha-manghang 4K aerial footage at 20MP photography."
+      },
+      {
+        "title": "Sertipikadong Mga Pilot",
+        "description": "Ang aming bihasang at lisensyadong mga drone pilot ay nagsisiguro ng ligtas at propesyonal na operasyon para sa lahat ng inyong aerial na pangangailangan."
+      },
+      {
+        "title": "Komprehensibong Serbisyo",
+        "description": "Mula sa coverage ng mga kaganapan hanggang sa dokumentasyon ng real estate, naghahatid kami ng mataas na kalidad na aerial content na naaayon sa inyong pangangailangan."
+      }
+    ]
+  },
   "content": {
     "title": "Skyline Production",
-    "description": "Aerial photography at video na perpekto para sa iba't ibang layunin",
-    "useCasesTitle": "Mga Espesyal na Okasyon",
-    "useCases": [
-      "Kasalan / Pre-Wedding",
-      "Graduation",
-      "Gathering"
-    ],
-    "variousPurposesTitle": "Iba't Ibang Layunin",
-    "variousPurposes": [
-      "Paglalakbay",
-      "School Yearbook",
-      "Company Profile"
-    ],
-    "industriesTitle": "Mga Industriya",
-    "industries": [
-      "Video Real Estate",
-      "Housing",
-      "Apartments"
-    ],
-    "purposesTitle": "Ang Layunin ng Pelikula",
-    "purposes": [
-      "Portfolio",
-      "Videoclip"
-    ],
-    "otherServicesTitle": "Iba Pang Dokumentasyon",
-    "otherServices": [
-      "Mapping",
-      "3D Object Generation para sa mga gusali o site",
-      "Editing",
-      "Color Grading"
+    "description": "Mga serbisyo ng aerial photography at videography na gumagamit ng DJI Mavic 2 Pro \"Hasselblad\" camera, perpekto para sa propesyonal at malikhaing visual na pangangailangan.",
+    "categories": [
+      {
+        "title": "Mga Espesyal na Okasyon",
+        "description": "Para sa personal na mga sandali at espesyal na okasyon:",
+        "icon": "red-carpet.json",
+        "items": [
+          "Kasalan / Pre-Wedding",
+          "Graduation",
+          "Gathering"
+        ]
+      },
+      {
+        "title": "Iba't Ibang Layunin",
+        "description": "Para sa iba't ibang pangkalahatan at komersyal na pangangailangan:",
+        "icon": "target.json",
+        "items": [
+          "Dokumentasyon ng paglalakbay",
+          "Mga proyekto ng school yearbook",
+          "Mga video ng company profile"
+        ]
+      },
+      {
+        "title": "Mga Industriya",
+        "description": "Para sa mga pangangailangan ng negosyo at ari-arian:",
+        "icon": "city-park.json",
+        "items": [
+          "Video ng real estate",
+          "Housing complex",
+          "Mga apartment at komersyal na espasyo"
+        ]
+      },
+      {
+        "title": "Ang Layunin ng Pelikula",
+        "description": "Para sa malikhaing mga gawa at produksyon ng video:",
+        "icon": "video-camera.json",
+        "items": [
+          "Produksyon ng portfolio",
+          "Paglikha ng videoclip"
+        ]
+      },
+      {
+        "title": "Iba Pang Dokumentasyon",
+        "description": "Para sa teknikal at dokumentasyon na pangangailangan:",
+        "icon": "drone.json",
+        "items": [
+          "Mapping at aerial survey",
+          "3D object generation para sa mga gusali o construction sites",
+          "Mga serbisyo ng video editing at color grading"
+        ]
+      }
     ],
     "specsTitle": "Teknikal na Mga Espesipikasyon",
     "fleet": {
       "title": "Fleet",
-      "description": "DJI Mavic 2 Pro \"HASSELBLAD\" Camera"
+      "description": "DJI Mavic 2 Pro \"Hasselblad\" Camera"
     },
     "videoQuality": {
       "title": "Kalidad ng Video",
-      "description": "4K (3840 X 2160) 30 Fps Color Depth 10-bit"
+      "description": "4K (3840 × 2160) sa 30 fps, 10-bit color depth"
     },
     "photoSize": {
       "title": "Laki ng Larawan",
-      "description": "20 MegaPixel (5472 X 3648)"
-    }
+      "description": "20 Megapixel (5472 × 3648)"
+    },
+    "closingStatement": "Kunin ang inyong kuwento mula sa itaas gamit ang propesyonal na aerial production."
   }
 }
 

@@ -3,52 +3,92 @@
     "title": "Layanan Drone Pilot",
     "description": "Footage drone itu bagus tapi mungkin Anda pikir sulit menemukan yang bagus. Anda cukup merekam footage original dengan kami. Kami memiliki staf yang terampil."
   },
+  "serviceBreakdown": {
+    "title": "Layanan Drone Profesional",
+    "description": "Layanan fotografi dan videografi udara profesional dengan peralatan canggih dan pilot bersertifikat.",
+    "features": [
+      {
+        "title": "Peralatan Profesional",
+        "description": "DJI Mavic 2 Pro dengan kamera Hasselblad untuk footage udara 4K yang menakjubkan dan fotografi 20MP."
+      },
+      {
+        "title": "Pilot Bersertifikat",
+        "description": "Pilot drone kami yang terampil dan berlisensi memastikan operasi yang aman dan profesional untuk semua kebutuhan udara Anda."
+      },
+      {
+        "title": "Layanan Komprehensif",
+        "description": "Dari liputan acara hingga dokumentasi real estate, kami menyediakan konten udara berkualitas tinggi yang disesuaikan dengan kebutuhan Anda."
+      }
+    ]
+  },
   "content": {
     "title": "Skyline Production",
-    "description": "Fotografi dan video udara yang sempurna untuk berbagai keperluan",
-    "useCasesTitle": "Acara Khusus",
-    "useCases": [
-      "Pernikahan / Pre-Wedding",
-      "Wisuda",
-      "Perkumpulan"
-    ],
-    "variousPurposesTitle": "Berbagai Tujuan",
-    "variousPurposes": [
-      "Perjalanan",
-      "Buku Tahunan Sekolah",
-      "Profil Perusahaan"
-    ],
-    "industriesTitle": "Industri",
-    "industries": [
-      "Video Real Estate",
-      "Perumahan",
-      "Apartemen"
-    ],
-    "purposesTitle": "Tujuan Film",
-    "purposes": [
-      "Portfolio",
-      "Videoclip"
-    ],
-    "otherServicesTitle": "Dokumentasi Lainnya",
-    "otherServices": [
-      "Pemetaan",
-      "Generasi Objek 3D untuk bangunan atau lokasi",
-      "Editing",
-      "Color Grading"
+    "description": "Layanan fotografi dan videografi udara menggunakan kamera DJI Mavic 2 Pro \"Hasselblad\", sempurna untuk kebutuhan visual profesional dan kreatif.",
+    "categories": [
+      {
+        "title": "Acara Khusus",
+        "description": "Untuk momen pribadi dan acara spesial:",
+        "icon": "red-carpet.json",
+        "items": [
+          "Pernikahan / Pre-Wedding",
+          "Wisuda",
+          "Perkumpulan"
+        ]
+      },
+      {
+        "title": "Berbagai Tujuan",
+        "description": "Untuk berbagai keperluan umum dan komersial:",
+        "icon": "target.json",
+        "items": [
+          "Dokumentasi perjalanan",
+          "Proyek buku tahunan sekolah",
+          "Video profil perusahaan"
+        ]
+      },
+      {
+        "title": "Industri",
+        "description": "Untuk kebutuhan bisnis dan properti:",
+        "icon": "city-park.json",
+        "items": [
+          "Video real estate",
+          "Kompleks perumahan",
+          "Apartemen dan ruang komersial"
+        ]
+      },
+      {
+        "title": "Tujuan Film",
+        "description": "Untuk karya kreatif dan produksi video:",
+        "icon": "video-camera.json",
+        "items": [
+          "Produksi portfolio",
+          "Pembuatan videoclip"
+        ]
+      },
+      {
+        "title": "Dokumentasi Lainnya",
+        "description": "Untuk kebutuhan teknis dan dokumentatif:",
+        "icon": "drone.json",
+        "items": [
+          "Pemetaan dan survei udara",
+          "Generasi objek 3D untuk bangunan atau lokasi konstruksi",
+          "Layanan editing video dan color grading"
+        ]
+      }
     ],
     "specsTitle": "Spesifikasi Teknis",
     "fleet": {
       "title": "Armada",
-      "description": "DJI Mavic 2 Pro \"HASSELBLAD\" Camera"
+      "description": "Kamera DJI Mavic 2 Pro \"Hasselblad\""
     },
     "videoQuality": {
       "title": "Kualitas Video",
-      "description": "4K (3840 X 2160) 30 Fps Color Depth 10-bit"
+      "description": "4K (3840 × 2160) pada 30 fps, kedalaman warna 10-bit"
     },
     "photoSize": {
       "title": "Ukuran Foto",
-      "description": "20 MegaPixel (5472 X 3648)"
-    }
+      "description": "20 Megapiksel (5472 × 3648)"
+    },
+    "closingStatement": "Abadikan cerita Anda dari atas dengan produksi udara profesional."
   }
 }
 

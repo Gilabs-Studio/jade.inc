@@ -3,52 +3,92 @@
     "title": "Drone Pilot Service",
     "description": "Drone footage is great but you may think it's hard to find a good one. You just shoot your original footage with us. We have a skilled staffer."
   },
+  "serviceBreakdown": {
+    "title": "Professional Drone Services",
+    "description": "Expert aerial photography and videography services with state-of-the-art equipment and certified pilots.",
+    "features": [
+      {
+        "title": "Professional Equipment",
+        "description": "DJI Mavic 2 Pro with Hasselblad camera for stunning 4K aerial footage and 20MP photography."
+      },
+      {
+        "title": "Certified Pilots",
+        "description": "Our skilled and licensed drone pilots ensure safe and professional operations for all your aerial needs."
+      },
+      {
+        "title": "Comprehensive Services",
+        "description": "From event coverage to real estate documentation, we deliver high-quality aerial content tailored to your needs."
+      }
+    ]
+  },
   "content": {
     "title": "Skyline Production",
-    "description": "Aerial photography and video perfect for various purposes",
-    "useCasesTitle": "Special Events",
-    "useCases": [
-      "Wedding / Pre-Wedding",
-      "Graduation",
-      "Gathering"
-    ],
-    "variousPurposesTitle": "Various Purposes",
-    "variousPurposes": [
-      "Traveling",
-      "School Yearbook",
-      "Company Profile"
-    ],
-    "industriesTitle": "Industries",
-    "industries": [
-      "Video Real Estate",
-      "Housing",
-      "Apartments"
-    ],
-    "purposesTitle": "The Purpose of Film",
-    "purposes": [
-      "Portfolio",
-      "Videoclip"
-    ],
-    "otherServicesTitle": "Other Documentation",
-    "otherServices": [
-      "Mapping",
-      "3D Object Generation for buildings or site",
-      "Editing",
-      "Color Grading"
+    "description": "Aerial photography and videography services using DJI Mavic 2 Pro \"Hasselblad\" camera, perfect for professional and creative visual needs.",
+    "categories": [
+      {
+        "title": "Special Events",
+        "description": "For personal moments and special occasions:",
+        "icon": "red-carpet.json",
+        "items": [
+          "Wedding / Pre-Wedding",
+          "Graduation",
+          "Gathering"
+        ]
+      },
+      {
+        "title": "Various Purposes",
+        "description": "For various general and commercial needs:",
+        "icon": "target.json",
+        "items": [
+          "Traveling documentation",
+          "School yearbook projects",
+          "Company profile videos"
+        ]
+      },
+      {
+        "title": "Industries",
+        "description": "For business and property needs:",
+        "icon": "city-park.json",
+        "items": [
+          "Real estate video",
+          "Housing complex",
+          "Apartments and commercial spaces"
+        ]
+      },
+      {
+        "title": "The Purpose of Film",
+        "description": "For creative works and video production:",
+        "icon": "video-camera.json",
+        "items": [
+          "Portfolio production",
+          "Videoclip creation"
+        ]
+      },
+      {
+        "title": "Other Documentation",
+        "description": "For technical and documentation needs:",
+        "icon": "drone.json",
+        "items": [
+          "Mapping and aerial survey",
+          "3D object generation for buildings or construction sites",
+          "Video editing and color grading services"
+        ]
+      }
     ],
     "specsTitle": "Technical Specifications",
     "fleet": {
       "title": "Fleet",
-      "description": "DJI Mavic 2 Pro \"HASSELBLAD\" Camera"
+      "description": "DJI Mavic 2 Pro \"Hasselblad\" Camera"
     },
     "videoQuality": {
       "title": "Video Quality",
-      "description": "4K (3840 X 2160) 30 Fps Color Depth 10-bit"
+      "description": "4K (3840 × 2160) at 30 fps, 10-bit color depth"
     },
     "photoSize": {
       "title": "Photo Size",
-      "description": "20 MegaPixel (5472 X 3648)"
-    }
+      "description": "20 Megapixel (5472 × 3648)"
+    },
+    "closingStatement": "Capture your story from above with professional aerial production."
   }
 }
 
