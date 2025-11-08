@@ -1,6 +1,30 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import { Header } from "@/src/features/landing/components/ui";
 import { Footer } from "@/src/features/landing/components/ui";
+
+export const metadata: Metadata = {
+  title: "Solutions - Use Cases & Success Stories | Jade Inc",
+  description:
+    "Discover how Jade Inc helps businesses with field research, marketing research, travel arrangement, and drone services. Explore our successful use cases and solutions across Indonesia, Philippines, and Singapore.",
+  keywords: [
+    "use cases",
+    "solutions",
+    "success stories",
+    "field research solutions",
+    "marketing research examples",
+    "case studies",
+    "Indonesia",
+    "Philippines",
+    "Singapore",
+  ],
+  openGraph: {
+    title: "Solutions - Use Cases & Success Stories | Jade Inc",
+    description:
+      "Discover how Jade Inc helps businesses with field research, marketing research, travel arrangement, and drone services.",
+    type: "website",
+  },
+};
 
 // Lazy load components for better performance
 const HeroSection = dynamic(

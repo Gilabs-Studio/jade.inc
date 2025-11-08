@@ -1,8 +1,30 @@
 import dynamic from "next/dynamic";
-import { Header } from "@/src/features/landing/components/ui";
-import { Footer } from "@/src/features/landing/components/ui";
+import type { Metadata } from "next";
+import { Header, Footer } from "@/src/features/landing/components/ui";
 
-// Lazy load components for better performance
+export const metadata: Metadata = {
+  title: "Field Services - Marketing Research & Data Collection | Jade Inc",
+  description:
+    "Professional field services for marketing research, data collection, and market analysis in Indonesia, Philippines, and Singapore. Expert coordination and project management for your research needs.",
+  keywords: [
+    "field services",
+    "marketing research",
+    "data collection",
+    "market research",
+    "field research",
+    "survey services",
+    "Indonesia",
+    "Philippines",
+    "Singapore",
+  ],
+  openGraph: {
+    title: "Field Services - Marketing Research & Data Collection | Jade Inc",
+    description:
+      "Professional field services for marketing research, data collection, and market analysis in Indonesia, Philippines, and Singapore.",
+    type: "website",
+  },
+};
+
 const HeroSection = dynamic(
   () =>
     import("@/src/features/marketing-research/components/ui").then(

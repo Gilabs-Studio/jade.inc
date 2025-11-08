@@ -1,6 +1,30 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import { Header } from "@/src/features/landing/components/ui";
 import { Footer } from "@/src/features/landing/components/ui";
+
+export const metadata: Metadata = {
+  title: "Drones - Professional Drone Pilot Services | Jade Inc",
+  description:
+    "Expert drone pilot services for aerial photography, surveying, mapping, and inspection in Indonesia, Philippines, and Singapore. Licensed pilots with professional-grade equipment for your business needs.",
+  keywords: [
+    "drone services",
+    "drone pilot",
+    "aerial photography",
+    "drone surveying",
+    "drone mapping",
+    "aerial inspection",
+    "Indonesia",
+    "Philippines",
+    "Singapore",
+  ],
+  openGraph: {
+    title: "Drones - Professional Drone Pilot Services | Jade Inc",
+    description:
+      "Expert drone pilot services for aerial photography, surveying, mapping, and inspection in Indonesia, Philippines, and Singapore.",
+    type: "website",
+  },
+};
 
 // Lazy load components for better performance
 const HeroSection = dynamic(

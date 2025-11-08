@@ -1,6 +1,29 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import { Header } from "@/src/features/landing/components/ui";
 import { Footer } from "@/src/features/landing/components/ui";
+
+export const metadata: Metadata = {
+  title: "Travel - Business Travel Arrangement Services | Jade Inc",
+  description:
+    "Professional travel arrangement services for business trips in Indonesia, Philippines, and Singapore. We handle flights, accommodations, transportation, and logistics for your field research and business needs.",
+  keywords: [
+    "travel arrangement",
+    "business travel",
+    "travel services",
+    "corporate travel",
+    "Indonesia travel",
+    "Philippines travel",
+    "Singapore travel",
+    "travel coordination",
+  ],
+  openGraph: {
+    title: "Travel - Business Travel Arrangement Services | Jade Inc",
+    description:
+      "Professional travel arrangement services for business trips in Indonesia, Philippines, and Singapore.",
+    type: "website",
+  },
+};
 
 // Lazy load components for better performance
 const HeroSection = dynamic(

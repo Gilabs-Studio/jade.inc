@@ -1,5 +1,28 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import { Header, HeroSection } from "@/src/features/landing/components/ui";
+
+export const metadata: Metadata = {
+  title: "Jade Inc - Field Research & Coordination Services",
+  description:
+    "Coordination specialist for field research and arrangement in Indonesia, Philippines and Singapore. We support your business with marketing research, travel arrangement, and drone rental services.",
+  keywords: [
+    "field research",
+    "marketing research",
+    "coordination services",
+    "Indonesia",
+    "Philippines",
+    "Singapore",
+    "travel arrangement",
+    "drone services",
+  ],
+  openGraph: {
+    title: "Jade Inc - Field Research & Coordination Services",
+    description:
+      "Coordination specialist for field research and arrangement in Indonesia, Philippines and Singapore.",
+    type: "website",
+  },
+};
 
 // Lazy load below-the-fold components for instant FCP
 // Each component is code-split and loaded on-demand
