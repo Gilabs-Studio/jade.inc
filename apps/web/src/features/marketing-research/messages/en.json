@@ -26,13 +26,59 @@
     "subtitle": "Comprehensive marketing research services tailored to your needs",
     "items": [
       {
-        "title": "IDIs | FGDs | CLTs | Online Survey"
+        "title": "IDIs (In-Depth Interviews)",
+        "description": "One-on-one deep interviews for detailed insights",
+        "icon": "job-interview.json"
       },
       {
-        "title": "Ethnography | Inhomes | Immersions | Client Immersions"
+        "title": "FGDs (Focus Group Discussions)",
+        "description": "Group sessions to capture multiple perspectives",
+        "icon": "discussion.json"
       },
       {
-        "title": "Shop-Alongs | Travel-Alongs | Diary | Tasks"
+        "title": "CLTs (Central Location Tests)",
+        "description": "Product testing in a controlled venue",
+        "icon": "test.json"
+      },
+      {
+        "title": "Online Survey",
+        "description": "Remote data collection via online platform",
+        "icon": "online-survey.json"
+      },
+      {
+        "title": "Ethnography",
+        "description": "Observing consumer behavior in their environment",
+        "icon": "observation.json"
+      },
+      {
+        "title": "Inhomes",
+        "description": "Conducting research inside respondent's home",
+        "icon": "man-in-home.json"
+      },
+      {
+        "title": "Immersions",
+        "description": "Researchers experience consumer's life firsthand",
+        "icon": "target-audience.json"
+      },
+      {
+        "title": "Client Immersions",
+        "description": "Letting clients join field visits",
+        "icon": "handshake.json"
+      },
+      {
+        "title": "Shop-Alongs",
+        "description": "Observing respondents while shopping",
+        "icon": "shopping-cart.json"
+      },
+      {
+        "title": "Travel-Alongs",
+        "description": "Observing respondents on their travel",
+        "icon": "solo-traveller.json"
+      },
+      {
+        "title": "Diary / Tasks",
+        "description": "Respondents record daily habits or complete assignments",
+        "icon": "to-do-list.json"
       }
     ]
   },

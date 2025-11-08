@@ -26,13 +26,59 @@
     "subtitle": "Layanan riset pasar komprehensif yang disesuaikan dengan kebutuhan Anda",
     "items": [
       {
-        "title": "IDIs | FGDs | CLTs | Survei Online"
+        "title": "IDIs (Wawancara Mendalam)",
+        "description": "Wawancara satu-satu yang mendalam untuk mendapatkan wawasan detail",
+        "icon": "job-interview.json"
       },
       {
-        "title": "Etnografi | Kunjungan Rumah | Imersi | Imersi Klien"
+        "title": "FGDs (Diskusi Kelompok Terfokus)",
+        "description": "Sesi kelompok untuk menangkap berbagai perspektif",
+        "icon": "discussion.json"
       },
       {
-        "title": "Shop-Alongs | Travel-Alongs | Diary | Tugas"
+        "title": "CLTs (Uji Lokasi Terpusat)",
+        "description": "Pengujian produk di lokasi yang terkontrol",
+        "icon": "test.json"
+      },
+      {
+        "title": "Survei Online",
+        "description": "Pengumpulan data jarak jauh melalui platform online",
+        "icon": "online-survey.json"
+      },
+      {
+        "title": "Etnografi",
+        "description": "Mengamati perilaku konsumen di lingkungan mereka",
+        "icon": "observation.json"
+      },
+      {
+        "title": "Kunjungan Rumah",
+        "description": "Melakukan riset di dalam rumah responden",
+        "icon": "man-in-home.json"
+      },
+      {
+        "title": "Imersi",
+        "description": "Peneliti mengalami kehidupan konsumen secara langsung",
+        "icon": "target-audience.json"
+      },
+      {
+        "title": "Imersi Klien",
+        "description": "Mengizinkan klien bergabung dalam kunjungan lapangan",
+        "icon": "handshake.json"
+      },
+      {
+        "title": "Shop-Alongs",
+        "description": "Mengamati responden saat berbelanja",
+        "icon": "shopping-cart.json"
+      },
+      {
+        "title": "Travel-Alongs",
+        "description": "Mengamati responden dalam perjalanan mereka",
+        "icon": "solo-traveller.json"
+      },
+      {
+        "title": "Diary / Tugas",
+        "description": "Responden mencatat kebiasaan harian atau menyelesaikan tugas",
+        "icon": "to-do-list.json"
       }
     ]
   },
