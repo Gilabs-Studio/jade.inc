@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "badge": "Real-World Success Stories",
+    "title": "Marketing Research Use Cases",
+    "description": "Discover how we've successfully navigated complex challenges across multiple industries, locations, and unique scenarios. Each case represents our commitment to excellence and innovative problem-solving.",
+    "stats": {
+      "cases": "Use Cases",
+      "countries": "Countries",
+      "samples": "Total Samples",
+      "success": "Success Rate"
+    }
+  },
+  "useCases": {
+    "title": "Marketing Research Use Cases",
+    "subtitle": "Real-world examples of our successful projects across multiple industries and locations",
+    "items": [
+      {
+        "title": "Conducting survey across Indonesia",
+        "client": "Major manufacturer",
+        "type": "In-depth interview (Home visit and Store shadowing)",
+        "period": "Total 7 days",
+        "size": "9 samples",
+        "location": "Indonesia",
+        "challenge": "Navigating diverse regions with varying transportation and communication infrastructure, ensuring consistent data quality across remote areas with limited internet connectivity."
+      },
+      {
+        "title": "Managing people with the latest device",
+        "client": "Global FMCG",
+        "type": "Online survey and sample product testing",
+        "period": "Total 6 days",
+        "size": "24 samples",
+        "location": "Philippines",
+        "challenge": "Coordinating device distribution and training participants across multiple locations while maintaining data integrity and ensuring all participants could effectively use the latest technology."
+      },
+      {
+        "title": "Handling survey with mom and kids",
+        "client": "Global FMCG",
+        "type": "Online survey",
+        "period": "Total 3 days",
+        "size": "18 parents and 18 kids",
+        "location": "Singapore",
+        "challenge": "Managing dual-participant surveys requiring coordination between parents and children, ensuring age-appropriate engagement and maintaining high response rates from both demographics."
+      }
+    ]
+  }
+}
+
+

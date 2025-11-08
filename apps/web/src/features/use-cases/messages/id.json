@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "badge": "Kisah Sukses Dunia Nyata",
+    "title": "Studi Kasus Riset Pasar",
+    "description": "Temukan bagaimana kami berhasil mengatasi tantangan kompleks di berbagai industri, lokasi, dan skenario unik. Setiap kasus mewakili komitmen kami terhadap keunggulan dan pemecahan masalah yang inovatif.",
+    "stats": {
+      "cases": "Studi Kasus",
+      "countries": "Negara",
+      "samples": "Total Sampel",
+      "success": "Tingkat Kesuksesan"
+    }
+  },
+  "useCases": {
+    "title": "Studi Kasus Riset Pemasaran",
+    "subtitle": "Contoh nyata dari proyek kami yang berhasil di berbagai industri dan lokasi",
+    "items": [
+      {
+        "title": "Melakukan survei di seluruh Indonesia",
+        "client": "Produsen besar",
+        "type": "Wawancara mendalam (Kunjungan rumah dan Store shadowing)",
+        "period": "Total 7 hari",
+        "size": "9 sampel",
+        "location": "Indonesia",
+        "challenge": "Menavigasi berbagai wilayah dengan infrastruktur transportasi dan komunikasi yang bervariasi, memastikan kualitas data yang konsisten di seluruh area terpencil dengan konektivitas internet terbatas."
+      },
+      {
+        "title": "Mengelola orang dengan perangkat terbaru",
+        "client": "FMCG Global",
+        "type": "Survei online dan uji produk sampel",
+        "period": "Total 6 hari",
+        "size": "24 sampel",
+        "location": "Filipina",
+        "challenge": "Mengkoordinasikan distribusi perangkat dan melatih peserta di berbagai lokasi sambil mempertahankan integritas data dan memastikan semua peserta dapat menggunakan teknologi terbaru secara efektif."
+      },
+      {
+        "title": "Menangani survei dengan ibu dan anak-anak",
+        "client": "FMCG Global",
+        "type": "Survei online",
+        "period": "Total 3 hari",
+        "size": "18 orang tua dan 18 anak",
+        "location": "Singapura",
+        "challenge": "Mengelola survei dengan dua peserta yang memerlukan koordinasi antara orang tua dan anak-anak, memastikan keterlibatan yang sesuai usia dan mempertahankan tingkat respons yang tinggi dari kedua demografi."
+      }
+    ]
+  }
+}
+
+

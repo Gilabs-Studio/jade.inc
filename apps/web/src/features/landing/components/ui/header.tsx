@@ -30,16 +30,16 @@ const Header = () => {
             Field Services
           </Link>
           <Link
+            href="/use-cases"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            Use Cases
+          </Link>
+          <Link
             href="#services"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Services
-          </Link>
-          <Link
-            href="#use-cases"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Use Cases
           </Link>
           <Link
             href="#about"
@@ -97,18 +97,18 @@ const Header = () => {
               Marketing Research
             </Link>
             <Link
+              href="/use-cases"
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Use Cases
+            </Link>
+            <Link
               href="#services"
               className="text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
-            </Link>
-            <Link
-              href="#use-cases"
-              className="text-sm font-medium hover:text-primary transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Use Cases
             </Link>
             <Link
               href="#about"
