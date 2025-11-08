@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { HeroSection } from "@/src/features/landing/components/ui";
+import { BlogSection } from "@/src/features/blog/components/ui";
 
 export const metadata: Metadata = {
   title: "Jade Inc - Field Research & Coordination Services",
@@ -106,6 +107,8 @@ const AboutSection = dynamic(
   }
 );
 
+// BlogSection is client component; load immediately (above-the-fold enough) without dynamic skeleton for clarity.
+
 const ContactSection = dynamic(
   () =>
     import("@/src/features/landing/components/ui").then(
@@ -135,6 +138,7 @@ export default function LandingPage() {
       <ServicesSection />
       <UseCasesSection />
       <AboutSection />
+      <BlogSection />
       <ContactSection />
     </main>
   );

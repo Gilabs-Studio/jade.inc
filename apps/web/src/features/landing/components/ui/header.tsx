@@ -49,6 +49,11 @@ const Header = () => {
               Contact
             </TextRoll>
           </Link>
+          <Link href="/blog" className="group">
+            <TextRoll className="text-sm font-medium group-hover:text-primary transition-colors">
+              Blog
+            </TextRoll>
+          </Link>
           <LanguageSwitcher />
         </div>
 
@@ -133,6 +138,13 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
+            </Link>
+            <Link
+              href="/blog"
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
             </Link>
             <LanguageSwitcher />
           </div>
