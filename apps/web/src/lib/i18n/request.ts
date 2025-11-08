@@ -33,12 +33,20 @@ export default getRequestConfig(async ({ requestLocale }) => {
       : (await import("@/src/features/travel-arrangement/messages/id.json"))
           .default;
 
+  const dronePilotServiceMessages =
+    locale === "en"
+      ? (await import("@/src/features/drone-pilot-service/messages/en.json"))
+          .default
+      : (await import("@/src/features/drone-pilot-service/messages/id.json"))
+          .default;
+
   // Merge messages
   const messages = {
     ...landingMessages,
     marketingResearch: marketingResearchMessages,
     useCasesPage: useCasesMessages,
     travelArrangement: travelArrangementMessages,
+    dronePilotService: dronePilotServiceMessages,
   };
 
   return {

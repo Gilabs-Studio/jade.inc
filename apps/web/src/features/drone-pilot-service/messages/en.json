@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Drone Pilot Service",
+    "description": "Drone footage is great but you may think it's hard to find a good one. You just shoot your original footage with us. We have a skilled staffer."
+  },
+  "content": {
+    "title": "Skyline Production",
+    "description": "Aerial photography and video perfect for various purposes",
+    "useCasesTitle": "Special Events",
+    "useCases": [
+      "Wedding / Pre-Wedding",
+      "Graduation",
+      "Gathering"
+    ],
+    "variousPurposesTitle": "Various Purposes",
+    "variousPurposes": [
+      "Traveling",
+      "School Yearbook",
+      "Company Profile"
+    ],
+    "industriesTitle": "Industries",
+    "industries": [
+      "Video Real Estate",
+      "Housing",
+      "Apartments"
+    ],
+    "purposesTitle": "The Purpose of Film",
+    "purposes": [
+      "Portfolio",
+      "Videoclip"
+    ],
+    "otherServicesTitle": "Other Documentation",
+    "otherServices": [
+      "Mapping",
+      "3D Object Generation for buildings or site",
+      "Editing",
+      "Color Grading"
+    ],
+    "specsTitle": "Technical Specifications",
+    "fleet": {
+      "title": "Fleet",
+      "description": "DJI Mavic 2 Pro \"HASSELBLAD\" Camera"
+    },
+    "videoQuality": {
+      "title": "Video Quality",
+      "description": "4K (3840 X 2160) 30 Fps Color Depth 10-bit"
+    },
+    "photoSize": {
+      "title": "Photo Size",
+      "description": "20 MegaPixel (5472 X 3648)"
+    }
+  }
+}
+

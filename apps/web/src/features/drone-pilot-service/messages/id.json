@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Layanan Drone Pilot",
+    "description": "Footage drone itu bagus tapi mungkin Anda pikir sulit menemukan yang bagus. Anda cukup merekam footage original dengan kami. Kami memiliki staf yang terampil."
+  },
+  "content": {
+    "title": "Skyline Production",
+    "description": "Fotografi dan video udara yang sempurna untuk berbagai keperluan",
+    "useCasesTitle": "Acara Khusus",
+    "useCases": [
+      "Pernikahan / Pre-Wedding",
+      "Wisuda",
+      "Perkumpulan"
+    ],
+    "variousPurposesTitle": "Berbagai Tujuan",
+    "variousPurposes": [
+      "Perjalanan",
+      "Buku Tahunan Sekolah",
+      "Profil Perusahaan"
+    ],
+    "industriesTitle": "Industri",
+    "industries": [
+      "Video Real Estate",
+      "Perumahan",
+      "Apartemen"
+    ],
+    "purposesTitle": "Tujuan Film",
+    "purposes": [
+      "Portfolio",
+      "Videoclip"
+    ],
+    "otherServicesTitle": "Dokumentasi Lainnya",
+    "otherServices": [
+      "Pemetaan",
+      "Generasi Objek 3D untuk bangunan atau lokasi",
+      "Editing",
+      "Color Grading"
+    ],
+    "specsTitle": "Spesifikasi Teknis",
+    "fleet": {
+      "title": "Armada",
+      "description": "DJI Mavic 2 Pro \"HASSELBLAD\" Camera"
+    },
+    "videoQuality": {
+      "title": "Kualitas Video",
+      "description": "4K (3840 X 2160) 30 Fps Color Depth 10-bit"
+    },
+    "photoSize": {
+      "title": "Ukuran Foto",
+      "description": "20 MegaPixel (5472 X 3648)"
+    }
+  }
+}
+

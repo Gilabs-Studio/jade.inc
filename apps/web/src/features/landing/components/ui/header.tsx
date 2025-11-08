@@ -27,19 +27,25 @@ const Header = () => {
             href="/marketing-research"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
-            Field Services
+            Services
           </Link>
           <Link
             href="/use-cases"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
-            Use Cases
+            Solutions
           </Link>
           <Link
             href="/travel-arrangement"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
-            Travel Arrangement
+            Travel
+          </Link>
+          <Link
+            href="/drone-pilot-service"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            Drones
           </Link>
           <Link
             href="#contact"
@@ -88,14 +94,28 @@ const Header = () => {
               className="text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Marketing Research
+              Services
             </Link>
             <Link
               href="/use-cases"
               className="text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Use Cases
+              Solutions
+            </Link>
+            <Link
+              href="/travel-arrangement"
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Travel
+            </Link>
+            <Link
+              href="/drone-pilot-service"
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Drones
             </Link>
             <Link
               href="#services"
