@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { TextRoll } from "@/components/ui/text-roll";
 import { useTranslations } from "next-intl";
 import Lottie from "lottie-react";
 import { useRef, useState, useEffect } from "react";
@@ -47,7 +48,7 @@ const ServiceItem = ({ service, animationData }: ServiceItemProps) => {
           variant="ghost"
           className="p-0 h-auto font-semibold text-primary hover:bg-transparent group/btn"
         >
-          {service.cta}
+          <TextRoll>{service.cta}</TextRoll>
           <svg
             className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform"
             fill="none"
