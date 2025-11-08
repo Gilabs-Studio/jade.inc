@@ -16,19 +16,19 @@ const MarketsSection = () => {
   return (
     <section className="py-32 bg-muted/30">
       <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">
-            {t("markets.title")}
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">
+              {t("markets.title")}
+            </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {t("markets.description")}
-          </p>
-        </div>
+              {t("markets.description")}
+            </p>
+          </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto mb-16">
           {/* Map Section */}
           <div className="relative rounded-2xl overflow-hidden border shadow-lg bg-card">
-            <div className="aspect-[4/3] relative">
+            <div className="aspect-4/3 relative">
               <Image
                 src="/map.webp"
                 alt="Service Locations Map"
@@ -63,7 +63,7 @@ const LocationCard = ({ location, index }: LocationCardProps) => {
       return "/icon/indonesia-flag.svg";
     } else if (title.includes("singapore") || title.includes("singapura")) {
       return "/icon/singapore-flag.svg";
-    } else if (title.includes("philippines") || title.includes("filipina")) {
+    } else if (title.includes("philippines") || title.includes("filipina") || title.includes("pilipinas")) {
       return "/icon/philippines-flag.svg";
     }
     return null;

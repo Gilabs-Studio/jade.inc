@@ -1,90 +1,94 @@
 {
   "hero": {
     "title": "Layanan Riset Pasar Lapangan",
-    "description": "Sulit untuk membuat pengaturan dan melakukan survei di Indonesia, Filipina dan Singapura. Kami mengakui ada beberapa masalah, misalnya dalam rekrutmen, di mana masih banyak area yang sulit dijangkau karena keterbatasan transportasi atau komunikasi, yang muncul baik karena koneksi internet terbatas atau akses ke perangkat atau hambatan lainnya. Kami dapat menangani situasi tersebut."
+    "description": "Mengatur dan melakukan survei di Indonesia, Filipina, dan Singapura memang menantang. Kami memahami berbagai kendala yang muncul, seperti dalam proses rekrutmen, di mana masih banyak wilayah yang sulit dijangkau karena keterbatasan transportasi atau komunikasi—baik karena koneksi internet yang terbatas, akses perangkat yang kurang, maupun hambatan lainnya. Kami siap mengatasi semua tantangan tersebut."
   },
   "markets": {
     "title": "Cakupan Pasar Kami",
-    "description": "Jade Inc. merekrut untuk tujuan Riset Pasar untuk membantu Anda terhubung dengan Konsumen dan Ahli di pasar Indonesia, Filipina dan Singapura. Kami melakukan rekrutmen responden secara tatap muka baik melalui referensi atau menggunakan basis data kami.",
+    "description": "Jade Inc. melakukan rekrutmen untuk keperluan Riset Pasar guna membantu Anda terhubung dengan Konsumen dan Ahli di pasar Indonesia, Filipina, dan Singapura. Kami melakukan rekrutmen responden secara tatap muka, baik melalui referensi maupun menggunakan basis data yang kami miliki.",
     "locations": [
       {
         "title": "Indonesia",
-        "description": "Cakupan pasar Indonesia kami mencakup kota-kota besar termasuk Jakarta, Surabaya, Bandung, Medan, dan banyak lagi. Kami memahami lanskap budaya yang beragam dan dialek lokal untuk memastikan riset pasar yang efektif."
+        "description": "Cakupan pasar Indonesia kami meliputi kota-kota besar seperti Jakarta, Surabaya, Bandung, Medan, dan berbagai kota lainnya. Kami memahami keragaman budaya dan dialek lokal untuk memastikan riset pasar berjalan efektif."
       },
       {
         "title": "Singapura",
-        "description": "Operasi Singapura kami mencakup seluruh negara kota, memberikan akses ke pasar multikultural dan sangat terhubung. Kami memfasilitasi riset di berbagai demografi dan sektor bisnis."
+        "description": "Operasi kami di Singapura mencakup seluruh negara kota, memberikan akses ke pasar yang multikultural dan sangat terhubung. Kami memfasilitasi riset di berbagai demografi dan sektor bisnis."
       },
       {
         "title": "Filipina",
-        "description": "Pasar Filipina kami mencakup Manila, Cebu, Davao, dan banyak lainnya, yang berbicara dialek berbeda seperti Tagalog dan Cebuano."
-      }
+        "description": "Cakupan pasar Filipina kami meliputi Manila, Cebu, Davao, dan berbagai kota lainnya, dengan responden yang menggunakan berbagai dialek seperti Tagalog dan Cebuano."
+    }
     ]
   },
   "services": {
     "title": "Yang Kami Lakukan",
     "subtitle": "Layanan riset pasar komprehensif yang disesuaikan dengan kebutuhan Anda",
+    "cta": {
+      "text": "Mulai Sekarang",
+      "description": "Siap memulai proyek riset Anda?"
+    },
     "items": [
       {
         "title": "IDIs (Wawancara Mendalam)",
-        "description": "Wawancara satu-satu yang mendalam untuk mendapatkan wawasan detail",
+        "description": "Wawancara mendalam secara satu-satu untuk memperoleh wawasan yang detail",
         "icon": "job-interview.json"
       },
       {
         "title": "FGDs (Diskusi Kelompok Terfokus)",
-        "description": "Sesi kelompok untuk menangkap berbagai perspektif",
+        "description": "Sesi diskusi kelompok untuk menggali berbagai perspektif",
         "icon": "discussion.json"
       },
       {
         "title": "CLTs (Uji Lokasi Terpusat)",
-        "description": "Pengujian produk di lokasi yang terkontrol",
+        "description": "Pengujian produk di lokasi terpusat yang terkontrol",
         "icon": "test.json"
       },
       {
         "title": "Survei Online",
-        "description": "Pengumpulan data jarak jauh melalui platform online",
+        "description": "Pengumpulan data secara jarak jauh melalui platform online",
         "icon": "online-survey.json"
       },
       {
         "title": "Etnografi",
-        "description": "Mengamati perilaku konsumen di lingkungan mereka",
+        "description": "Mengamati perilaku konsumen dalam lingkungan alami mereka",
         "icon": "observation.json"
       },
       {
         "title": "Kunjungan Rumah",
-        "description": "Melakukan riset di dalam rumah responden",
+        "description": "Melakukan riset langsung di rumah responden",
         "icon": "man-in-home.json"
       },
       {
         "title": "Imersi",
-        "description": "Peneliti mengalami kehidupan konsumen secara langsung",
+        "description": "Peneliti merasakan langsung kehidupan konsumen sehari-hari",
         "icon": "target-audience.json"
       },
       {
         "title": "Imersi Klien",
-        "description": "Mengizinkan klien bergabung dalam kunjungan lapangan",
+        "description": "Mengajak klien untuk ikut serta dalam kunjungan lapangan",
         "icon": "handshake.json"
       },
       {
         "title": "Shop-Alongs",
-        "description": "Mengamati responden saat berbelanja",
+        "description": "Mengamati responden selama proses berbelanja",
         "icon": "shopping-cart.json"
       },
       {
         "title": "Travel-Alongs",
-        "description": "Mengamati responden dalam perjalanan mereka",
+        "description": "Mengamati responden selama perjalanan mereka",
         "icon": "solo-traveller.json"
       },
       {
         "title": "Diary / Tugas",
-        "description": "Responden mencatat kebiasaan harian atau menyelesaikan tugas",
+        "description": "Responden mencatat kebiasaan harian atau menyelesaikan tugas yang diberikan",
         "icon": "to-do-list.json"
       }
     ]
   },
   "projectManagement": {
     "title": "Manajemen Proyek",
-    "subtitle": "PM kami mengatur untuk",
+    "subtitle": "Tim PM kami mengatur",
     "categories": [
       {
         "category": "Layanan Inti",
@@ -92,7 +96,7 @@
           "Rekrutmen",
           "Insentif",
           "Tempat",
-          "Penyegaran"
+          "Catering"
         ]
       },
       {
@@ -100,7 +104,7 @@
         "items": [
           "Moderator",
           "Penerjemah",
-          "Pencatatan"
+          "Notulensi"
         ]
       },
       {
@@ -123,7 +127,7 @@
   },
   "onlineSurveys": {
     "title": "Survei Online",
-    "description": "Kami berpengalaman dan percaya diri untuk bekerja dengan Platform Riset Online, seperti:",
+    "description": "Kami berpengalaman dan terpercaya dalam bekerja dengan berbagai Platform Riset Online, seperti:",
     "platforms": [
       "Conceptualizer",
       "Revelation",

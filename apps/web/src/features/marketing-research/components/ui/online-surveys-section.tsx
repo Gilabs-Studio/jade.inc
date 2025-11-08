@@ -51,16 +51,16 @@ const OnlineSurveysSection = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-            {platforms.map((platform, idx) => (
-              <div
-                key={idx}
+              {platforms.map((platform, idx) => (
+                <div
+                  key={idx}
                 className="group relative px-5 py-3 bg-card border rounded-full hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300"
-              >
+                >
                 <span className="text-sm md:text-base font-medium whitespace-nowrap">
-                  {platform}
+                    {platform}
                 </span>
-              </div>
-            ))}
+                </div>
+              ))}
           </div>
         </div>
       </div>

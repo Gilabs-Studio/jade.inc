@@ -17,13 +17,17 @@
       },
       {
         "title": "Philippines",
-        "description": "Our Philippines market covers Manila, Cebu, Davao, and many others, that speaks different dialect such as Tagalog and Cebuano."
-      }
+      "description": "Our Philippines market covers Manila, Cebu, Davao, and many others, that speaks different dialect such as Tagalog and Cebuano."
+    }
     ]
   },
   "services": {
     "title": "Things We Do",
     "subtitle": "Comprehensive marketing research services tailored to your needs",
+    "cta": {
+      "text": "Get Started",
+      "description": "Ready to start your research project?"
+    },
     "items": [
       {
         "title": "IDIs (In-Depth Interviews)",
