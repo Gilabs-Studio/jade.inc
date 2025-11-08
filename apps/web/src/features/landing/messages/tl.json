@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "title": "Simulan ang Inyong Marketing Research nang may Kumpiyansa sa Timog-Silangang Asya",
+    "subtitle": "Ekspertong Koordinasyon ng Pananaliksik",
+    "description": "Ang pagsasagawa ng field research sa Indonesia, Pilipinas, at Singapore ay maaaring maging napakabigat. Inaasikaso namin ang lahat ng kumplikasyon, upang kayo ay makapagpokus sa pinakamahalaga—inyong estratehiya at mga resulta.",
+    "cta": "Simulan ang Inyong Pananaliksik"
+  },
+  "services": {
+    "title": "Ang Aming Mga Serbisyo",
+    "subtitle": "Komprehensibong solusyon para sa inyong pangangailangan sa negosyo",
+    "items": [
+      {
+        "title": "Marketing Research",
+        "description": "Mahirap gumawa ng arrangement at magsagawa ng survey sa Indonesia, Pilipinas at Singapore. Tinatanggal namin ang lahat ng inyong problema sa arrangement.",
+        "cta": "Matuto Pa"
+      },
+      {
+        "title": "Travel Arrangement",
+        "description": "Inaasikaso namin ang lahat at kayo ay maupo lamang nang relaks.",
+        "cta": "Matuto Pa"
+      },
+      {
+        "title": "Drone Rental",
+        "description": "Ang drone footage ay napakaganda ngunit maaari ninyong isipin na mahirap makahanap ng maganda. Kayo lamang ang mag-shoot ng inyong original footage kasama namin. Mayroon kaming bihasang staffer.",
+        "cta": "Matuto Pa"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Marketing Research Use Case",
+    "subtitle": "Mga tunay na halimbawa ng aming matagumpay na proyekto",
+    "items": [
+      {
+        "title": "Pagsasagawa ng survey sa buong Indonesia",
+        "client": "Malaking manufacturer",
+        "type": "In-depth interview (Home visit at Store shadowing)",
+        "period": "Kabuuang 7 araw",
+        "size": "9 samples",
+        "cta": "Matuto Pa"
+      },
+      {
+        "title": "Pamamahala ng mga tao gamit ang pinakabagong device",
+        "client": "Global FMCG",
+        "type": "Online survey at sample product testing",
+        "period": "Kabuuang 6 araw",
+        "size": "24 samples",
+        "cta": "Matuto Pa"
+      },
+      {
+        "title": "Paghahandle ng survey kasama ang nanay at mga bata",
+        "client": "Global FMCG",
+        "type": "Online survey",
+        "period": "Kabuuang 3 araw",
+        "size": "18 magulang at 18 bata",
+        "cta": "Matuto Pa"
+      }
+    ]
+  },
+  "about": {
+    "title": "Tungkol sa amin",
+    "description": "Mula noong 2016, nagsilbi na kami sa aming mga customer gamit ang field management. Ang aming espesyalidad ay nasa aming business networks. Sa Indonesia, Pilipinas at Singapore, kailangan ninyo ng angkop na network upang maisagawa ang inyong gawain.",
+    "achievements": {
+      "title": "Ang Aming Mga Nakamit sa Bilang",
+      "description": "Pagbuo ng tiwala sa pamamagitan ng napatunayang resulta at nasiyahan na mga kliyente sa buong Timog-Silangang Asya.",
+      "items": [
+        {
+          "label": "Mga Proyektong Natapos",
+          "value": "500+"
+        },
+        {
+          "label": "Masayang Kliyente",
+          "value": "100+"
+        },
+        {
+          "label": "Mga Bansa na Nasakop",
+          "value": "3"
+        },
+        {
+          "label": "Taon ng Karanasan",
+          "value": "9+"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Kontak",
+    "subtitle": "Makipag-ugnayan sa amin",
+    "form": {
+      "name": "Pangalan",
+      "email": "Email",
+      "message": "Mensahe",
+      "submit": "Ipadala ang Mensahe"
+    }
+  },
+  "footer": {
+    "address": {
+      "title": "Jade Inc",
+      "line1": "Office Suite A529,",
+      "line2": "Mall Epicentrum Walk Lt.5, Jl.HR Rasuna Said",
+      "line3": "Jakarta Selatan 12940 Indonesia"
+    },
+    "contact": {
+      "whatsapp": "+62 812 1253 5365"
+    },
+    "recentPosts": {
+      "title": "Mga Kamakailang Post",
+      "items": [
+        {
+          "title": "Targeting specific subject",
+          "date": "Enero 18, 2021"
+        },
+        {
+          "title": "Ang kahalagahan ng QC sa recruitment",
+          "date": "Enero 3, 2021"
+        },
+        {
+          "title": "Hello mula sa Jakarta",
+          "date": "Nobyembre 16, 2020"
+        }
+      ]
+    },
+    "copyright": "© 2025 Jade Inc"
+  }
+}
+

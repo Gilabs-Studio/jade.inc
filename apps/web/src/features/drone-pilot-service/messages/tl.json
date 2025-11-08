@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Drone Pilot Service",
+    "description": "Ang drone footage ay napakaganda ngunit maaari ninyong isipin na mahirap makahanap ng maganda. Kayo lamang ang mag-shoot ng inyong original footage kasama namin. Mayroon kaming bihasang staffer."
+  },
+  "content": {
+    "title": "Skyline Production",
+    "description": "Aerial photography at video na perpekto para sa iba't ibang layunin",
+    "useCasesTitle": "Mga Espesyal na Okasyon",
+    "useCases": [
+      "Kasalan / Pre-Wedding",
+      "Graduation",
+      "Gathering"
+    ],
+    "variousPurposesTitle": "Iba't Ibang Layunin",
+    "variousPurposes": [
+      "Paglalakbay",
+      "School Yearbook",
+      "Company Profile"
+    ],
+    "industriesTitle": "Mga Industriya",
+    "industries": [
+      "Video Real Estate",
+      "Housing",
+      "Apartments"
+    ],
+    "purposesTitle": "Ang Layunin ng Pelikula",
+    "purposes": [
+      "Portfolio",
+      "Videoclip"
+    ],
+    "otherServicesTitle": "Iba Pang Dokumentasyon",
+    "otherServices": [
+      "Mapping",
+      "3D Object Generation para sa mga gusali o site",
+      "Editing",
+      "Color Grading"
+    ],
+    "specsTitle": "Teknikal na Mga Espesipikasyon",
+    "fleet": {
+      "title": "Fleet",
+      "description": "DJI Mavic 2 Pro \"HASSELBLAD\" Camera"
+    },
+    "videoQuality": {
+      "title": "Kalidad ng Video",
+      "description": "4K (3840 X 2160) 30 Fps Color Depth 10-bit"
+    },
+    "photoSize": {
+      "title": "Laki ng Larawan",
+      "description": "20 MegaPixel (5472 X 3648)"
+    }
+  }
+}
+

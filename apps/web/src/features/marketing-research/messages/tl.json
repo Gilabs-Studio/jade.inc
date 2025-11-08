@@ -1,0 +1,137 @@
+{
+  "hero": {
+    "title": "Marketing Research Field Services",
+    "description": "Mahirap gumawa ng arrangement at magsagawa ng survey sa Indonesia, Pilipinas at Singapore. Inaamin namin na may ilang mga isyu, halimbawa sa recruitment, kung saan mayroon pa ring maraming lugar na mahirap maabot dahil sa mga limitasyon sa transportasyon o komunikasyon, na lumalabas alinman dahil sa limitadong koneksyon sa internet o access sa mga device o iba pang mga hadlang. Kaya naming hawakan ang sitwasyon."
+  },
+  "markets": {
+    "title": "Ang Aming Market Coverage",
+    "description": "Ang Jade Inc. ay nagre-recruit para sa Market Research purposes upang tulungan kayong makakonekta sa Consumers at Experts sa Indonesia, Pilipinas at Singapore market. Ginagawa namin ang aming respondents recruitment nang harapan alinman sa pamamagitan ng referral o paggamit ng aming data base.",
+    "locations": [
+      {
+        "title": "Indonesia",
+        "description": "Ang aming Indonesia market coverage ay sumasaklaw sa mga pangunahing lungsod kabilang ang Jakarta, Surabaya, Bandung, Medan, at marami pa. Nauunawaan namin ang magkakaibang cultural landscape at lokal na mga dialekto upang matiyak ang epektibong market research."
+      },
+      {
+        "title": "Singapore",
+        "description": "Ang aming Singapore operations ay sumasaklaw sa buong city-state, na nagbibigay ng access sa isang multicultural at lubos na konektadong market. Pinadadali namin ang pananaliksik sa iba't ibang demograpiya at business sectors."
+      },
+      {
+        "title": "Pilipinas",
+        "description": "Ang aming Pilipinas market ay sumasaklaw sa Manila, Cebu, Davao, at marami pa, na nagsasalita ng iba't ibang dialekto tulad ng Tagalog at Cebuano."
+      }
+    ]
+  },
+  "services": {
+    "title": "Mga Bagay na Aming Ginagawa",
+    "subtitle": "Komprehensibong marketing research services na naaayon sa inyong pangangailangan",
+    "items": [
+      {
+        "title": "IDIs (In-Depth Interviews)",
+        "description": "One-on-one na malalim na interbyu para sa detalyadong insights",
+        "icon": "job-interview.json"
+      },
+      {
+        "title": "FGDs (Focus Group Discussions)",
+        "description": "Mga sesyon ng grupo upang makuha ang maraming perspektibo",
+        "icon": "discussion.json"
+      },
+      {
+        "title": "CLTs (Central Location Tests)",
+        "description": "Product testing sa isang kontroladong venue",
+        "icon": "test.json"
+      },
+      {
+        "title": "Online Survey",
+        "description": "Remote data collection sa pamamagitan ng online platform",
+        "icon": "test.json"
+      },
+      {
+        "title": "Ethnography",
+        "description": "Pagmamasid sa consumer behavior sa kanilang kapaligiran",
+        "icon": "observation.json"
+      },
+      {
+        "title": "Inhomes",
+        "description": "Pagsasagawa ng pananaliksik sa loob ng bahay ng respondent",
+        "icon": "man-in-home.json"
+      },
+      {
+        "title": "Immersions",
+        "description": "Ang mga researcher ay nakakaranas ng buhay ng consumer nang first-hand",
+        "icon": "target-audience.json"
+      },
+      {
+        "title": "Client Immersions",
+        "description": "Pagpapahintulot sa mga kliyente na sumali sa field visits",
+        "icon": "handshake.json"
+      },
+      {
+        "title": "Shop-Alongs",
+        "description": "Pagmamasid sa mga respondent habang namimili",
+        "icon": "shopping-cart.json"
+      },
+      {
+        "title": "Travel-Alongs",
+        "description": "Pagmamasid sa mga respondent sa kanilang paglalakbay",
+        "icon": "solo-traveller.json"
+      },
+      {
+        "title": "Diary / Tasks",
+        "description": "Ang mga respondent ay nagre-record ng araw-araw na gawi o kumukumpleto ng mga assignment",
+        "icon": "to-do-list.json"
+      }
+    ]
+  },
+  "projectManagement": {
+    "title": "Project Management",
+    "subtitle": "Ang aming PM ay nag-aayos para sa",
+    "categories": [
+      {
+        "category": "Core Services",
+        "items": [
+          "Recruitment",
+          "Incentives",
+          "Venues",
+          "Refreshments"
+        ]
+      },
+      {
+        "category": "Support Services",
+        "items": [
+          "Moderators",
+          "Translators",
+          "Note Taking"
+        ]
+      },
+      {
+        "category": "Documentation & Logistics",
+        "items": [
+          "Transcripts",
+          "Transports",
+          "Documentations"
+        ]
+      },
+      {
+        "category": "Travel & Accommodation",
+        "items": [
+          "Ticketing",
+          "Accommodation",
+          "Logistics"
+        ]
+      }
+    ]
+  },
+  "onlineSurveys": {
+    "title": "Online Surveys",
+    "description": "May karanasan kami at kumpiyansa na magtrabaho kasama ang Online Research Platform, tulad ng:",
+    "platforms": [
+      "Conceptualizer",
+      "Revelation",
+      "Point Logic",
+      "StoryTagger",
+      "Civicom",
+      "At marami pang iba"
+    ]
+  }
+}
+

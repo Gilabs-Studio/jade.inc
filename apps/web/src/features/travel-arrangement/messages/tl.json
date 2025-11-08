@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Travel Arrangement",
+    "description": "Marami kayong bagay na dapat isaalang-alang sa travel arrangement. Inaasikaso namin ang lahat at kayo ay maupo lamang nang relaks."
+  },
+  "services": {
+    "title": "Aming Inaayos",
+    "subtitle": "Komprehensibong travel services para sa inyong kaginhawahan",
+    "items": [
+      {
+        "title": "Transportations",
+        "description": "Inaasikaso namin ang lahat ng inyong pangangailangan sa transportasyon, mula sa airport transfers hanggang sa lokal na travel arrangements."
+      },
+      {
+        "title": "Accommodations",
+        "description": "Hanapin ang perpektong lugar na matutuluyan gamit ang aming maingat na napiling accommodation options."
+      },
+      {
+        "title": "Ticketing",
+        "description": "Flight, train, at event tickets na naayos nang walang problema para sa inyong paglalakbay."
+      },
+      {
+        "title": "Itinerary",
+        "description": "Maayos na naplano na mga itinerary na naaayon sa inyong mga kagustuhan at iskedyul."
+      },
+      {
+        "title": "FNB & More",
+        "description": "Pagkain, inumin, at iba pang mahahalagang serbisyo upang gawing komportable ang inyong paglalakbay."
+      }
+    ]
+  }
+}
+

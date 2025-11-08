@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "badge": "Mga Tunay na Kwento ng Tagumpay",
+    "title": "Marketing Research Use Cases",
+    "description": "Tuklasin kung paano namin matagumpay na na-navigate ang mga kumplikadong hamon sa iba't ibang industriya, lokasyon, at natatanging mga senaryo. Ang bawat kaso ay kumakatawan sa aming pangako sa kahusayan at makabagong paglutas ng problema.",
+    "stats": {
+      "cases": "Use Cases",
+      "countries": "Mga Bansa",
+      "samples": "Kabuuang Samples",
+      "success": "Success Rate"
+    }
+  },
+  "useCases": {
+    "title": "Marketing Research Use Cases",
+    "subtitle": "Mga tunay na halimbawa ng aming matagumpay na proyekto sa iba't ibang industriya at lokasyon",
+    "items": [
+      {
+        "title": "Pagsasagawa ng survey sa buong Indonesia",
+        "client": "Malaking manufacturer",
+        "type": "In-depth interview (Home visit at Store shadowing)",
+        "period": "Kabuuang 7 araw",
+        "size": "9 samples",
+        "location": "Indonesia",
+        "challenge": "Pag-navigate sa magkakaibang rehiyon na may iba't ibang transportasyon at komunikasyon na imprastraktura, tinitiyak ang pare-parehong kalidad ng data sa buong malalayong lugar na may limitadong koneksyon sa internet."
+      },
+      {
+        "title": "Pamamahala ng mga tao gamit ang pinakabagong device",
+        "client": "Global FMCG",
+        "type": "Online survey at sample product testing",
+        "period": "Kabuuang 6 araw",
+        "size": "24 samples",
+        "location": "Pilipinas",
+        "challenge": "Pagko-coordinate ng device distribution at pagsasanay sa mga participant sa iba't ibang lokasyon habang pinapanatili ang integridad ng data at tinitiyak na lahat ng participant ay maaaring epektibong gamitin ang pinakabagong teknolohiya."
+      },
+      {
+        "title": "Paghahandle ng survey kasama ang nanay at mga bata",
+        "client": "Global FMCG",
+        "type": "Online survey",
+        "period": "Kabuuang 3 araw",
+        "size": "18 magulang at 18 bata",
+        "location": "Singapore",
+        "challenge": "Pamamahala ng dual-participant surveys na nangangailangan ng koordinasyon sa pagitan ng mga magulang at bata, tinitiyak ang age-appropriate engagement at pagpapanatili ng mataas na response rates mula sa parehong demograpiya."
+      }
+    ]
+  }
+}
+

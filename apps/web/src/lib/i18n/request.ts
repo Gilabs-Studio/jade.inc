@@ -1,44 +1,48 @@
 import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 
+type Locale = "en" | "id" | "tl";
+
+const importMessages = async (feature: string, locale: Locale) => {
+  switch (locale) {
+    case "en":
+      return (await import(`@/src/features/${feature}/messages/en.json`))
+        .default;
+    case "id":
+      return (await import(`@/src/features/${feature}/messages/id.json`))
+        .default;
+    case "tl":
+      return (await import(`@/src/features/${feature}/messages/tl.json`))
+        .default;
+    default:
+      return (await import(`@/src/features/${feature}/messages/en.json`))
+        .default;
+  }
+};
+
 export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale;
 
-  if (!locale || !routing.locales.includes(locale as "en" | "id")) {
+  if (!locale || !routing.locales.includes(locale as Locale)) {
     locale = routing.defaultLocale;
   }
 
+  const validLocale = locale as Locale;
+
   // Import messages from all features
-  const landingMessages =
-    locale === "en"
-      ? (await import("@/src/features/landing/messages/en.json")).default
-      : (await import("@/src/features/landing/messages/id.json")).default;
-
-  const marketingResearchMessages =
-    locale === "en"
-      ? (await import("@/src/features/marketing-research/messages/en.json"))
-          .default
-      : (await import("@/src/features/marketing-research/messages/id.json"))
-          .default;
-
-  const useCasesMessages =
-    locale === "en"
-      ? (await import("@/src/features/use-cases/messages/en.json")).default
-      : (await import("@/src/features/use-cases/messages/id.json")).default;
-
-  const travelArrangementMessages =
-    locale === "en"
-      ? (await import("@/src/features/travel-arrangement/messages/en.json"))
-          .default
-      : (await import("@/src/features/travel-arrangement/messages/id.json"))
-          .default;
-
-  const dronePilotServiceMessages =
-    locale === "en"
-      ? (await import("@/src/features/drone-pilot-service/messages/en.json"))
-          .default
-      : (await import("@/src/features/drone-pilot-service/messages/id.json"))
-          .default;
+  const [
+    landingMessages,
+    marketingResearchMessages,
+    useCasesMessages,
+    travelArrangementMessages,
+    dronePilotServiceMessages,
+  ] = await Promise.all([
+    importMessages("landing", validLocale),
+    importMessages("marketing-research", validLocale),
+    importMessages("use-cases", validLocale),
+    importMessages("travel-arrangement", validLocale),
+    importMessages("drone-pilot-service", validLocale),
+  ]);
 
   // Merge messages
   const messages = {
