@@ -36,16 +36,10 @@ const Header = () => {
             Use Cases
           </Link>
           <Link
-            href="#services"
+            href="/travel-arrangement"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
-            Services
-          </Link>
-          <Link
-            href="#about"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            About
+            Travel Arrangement
           </Link>
           <Link
             href="#contact"

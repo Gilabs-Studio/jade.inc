@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "title": "Pengaturan Perjalanan",
+    "description": "Ada banyak hal yang perlu dipertimbangkan dalam pengaturan perjalanan. Kami mengurus semuanya dan Anda cukup duduk santai."
+  },
+  "services": {
+    "title": "Yang Kami Atur",
+    "subtitle": "Layanan perjalanan komprehensif untuk kenyamanan Anda",
+    "items": [
+      {
+        "title": "Transportasi",
+        "description": "Kami menangani semua kebutuhan transportasi Anda, mulai dari transfer bandara hingga pengaturan perjalanan lokal."
+      },
+      {
+        "title": "Akomodasi",
+        "description": "Temukan tempat menginap yang sempurna dengan pilihan akomodasi yang kami pilih dengan hati-hati."
+      },
+      {
+        "title": "Tiket",
+        "description": "Tiket pesawat, kereta, dan acara diatur dengan mulus untuk perjalanan Anda."
+      },
+      {
+        "title": "Itinerary",
+        "description": "Itinerary yang direncanakan dengan baik sesuai dengan preferensi dan jadwal Anda."
+      },
+      {
+        "title": "FNB & Lainnya",
+        "description": "Makanan, minuman, dan layanan penting lainnya untuk membuat perjalanan Anda nyaman."
+      }
+    ]
+  }
+}
+
+

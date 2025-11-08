@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "title": "Travel Arrangement",
+    "description": "You have many things to consider in travel arrangement. We take care of all and you just sit relaxed."
+  },
+  "services": {
+    "title": "We Arrange",
+    "subtitle": "Comprehensive travel services for your convenience",
+    "items": [
+      {
+        "title": "Transportations",
+        "description": "We handle all your transportation needs, from airport transfers to local travel arrangements."
+      },
+      {
+        "title": "Accommodations",
+        "description": "Find the perfect place to stay with our carefully selected accommodation options."
+      },
+      {
+        "title": "Ticketing",
+        "description": "Flight, train, and event tickets arranged seamlessly for your journey."
+      },
+      {
+        "title": "Itinerary",
+        "description": "Well-planned itineraries tailored to your preferences and schedule."
+      },
+      {
+        "title": "FNB & More",
+        "description": "Food, beverages, and other essential services to make your trip comfortable."
+      }
+    ]
+  }
+}
+
+
