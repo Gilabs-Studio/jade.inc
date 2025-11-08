@@ -2,7 +2,7 @@
 
 import { Link } from "@/src/lib/i18n";
 import { LanguageSwitcher } from "./language-switcher";
-import { TextRoll } from "./text-roll";
+import { TextRoll } from "@/components/ui/text-roll";
 import { useState } from "react";
 import Image from "next/image";
 
