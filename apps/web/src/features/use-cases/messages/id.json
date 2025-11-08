@@ -15,31 +15,47 @@
     "subtitle": "Contoh nyata dari proyek kami yang berhasil di berbagai industri dan lokasi",
     "items": [
       {
-        "title": "Melakukan survei di seluruh Indonesia",
-        "client": "Produsen besar",
-        "type": "Wawancara mendalam (Kunjungan rumah dan Store shadowing)",
-        "period": "Total 7 hari",
+        "title": "Di beberapa lokasi",
+        "client": "Produsen perangkat",
+        "type": "Wawancara kelompok fokus (Kunjungan rumah dan store shadowing)",
+        "period": "7 hari",
         "size": "9 sampel",
-        "location": "Indonesia",
-        "challenge": "Menavigasi berbagai wilayah dengan infrastruktur transportasi dan komunikasi yang bervariasi, memastikan kualitas data yang konsisten di seluruh area terpencil dengan konektivitas internet terbatas."
+        "location": "Jakarta dan Yogyakarta",
+        "challenge": "Untuk melakukan survei di beberapa lokasi dalam periode terbatas."
       },
       {
-        "title": "Mengelola orang dengan perangkat terbaru",
-        "client": "FMCG Global",
+        "title": "Dengan perangkat terbaru",
+        "client": "Produsen FMCG",
         "type": "Survei online dan uji produk sampel",
-        "period": "Total 6 hari",
+        "period": "6 hari",
         "size": "24 sampel",
-        "location": "Filipina",
-        "challenge": "Mengkoordinasikan distribusi perangkat dan melatih peserta di berbagai lokasi sambil mempertahankan integritas data dan memastikan semua peserta dapat menggunakan teknologi terbaru secara efektif."
+        "challenge": "Responden perlu menonton video stimulus dengan perangkat yang tidak mereka kenal."
       },
       {
-        "title": "Menangani survei dengan ibu dan anak-anak",
-        "client": "FMCG Global",
+        "title": "Dengan ibu dan anak-anak",
+        "client": "Produsen FMCG",
         "type": "Survei online",
-        "period": "Total 3 hari",
+        "period": "3 hari",
         "size": "18 orang tua dan 18 anak",
-        "location": "Singapura",
-        "challenge": "Mengelola survei dengan dua peserta yang memerlukan koordinasi antara orang tua dan anak-anak, memastikan keterlibatan yang sesuai usia dan mempertahankan tingkat respons yang tinggi dari kedua demografi."
+        "challenge": "Orang tua tidak memperhatikan merek sementara anak-anak bergerak ke sana kemari."
+      },
+      {
+        "title": "Di beberapa negara",
+        "client": "Produsen FMCG",
+        "type": "Wawancara mendalam (Kunjungan rumah, Survei online dan Diary online)",
+        "period": "14 hari",
+        "size": "19 sampel",
+        "location": "Jakarta, Indonesia dan Manila, Filipina",
+        "challenge": "Ibu dengan anak-anak diharuskan membuat diary tentang masakan mereka untuk keluarga setiap hari."
+      },
+      {
+        "title": "Menargetkan subjek spesifik",
+        "client": "Perusahaan farmasi",
+        "type": "Wawancara mendalam (Kunjungan rumah, Survei online dan Diary online)",
+        "period": "14 hari",
+        "size": "24 pasien dan 4 sampel ahli",
+        "location": "Jakarta dan Surabaya",
+        "challenge": "Rekrutmen pasien pasca operasi yang baru saja keluar dari rumah sakit."
       }
     ]
   }

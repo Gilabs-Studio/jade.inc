@@ -15,31 +15,47 @@
     "subtitle": "Mga tunay na halimbawa ng aming matagumpay na proyekto sa iba't ibang industriya at lokasyon",
     "items": [
       {
-        "title": "Pagsasagawa ng survey sa buong Indonesia",
-        "client": "Malaking manufacturer",
-        "type": "In-depth interview (Home visit at Store shadowing)",
-        "period": "Kabuuang 7 araw",
+        "title": "Sa maraming lokasyon",
+        "client": "Device manufacturer",
+        "type": "Focus group interview (House visit at store shadowing)",
+        "period": "7 araw",
         "size": "9 samples",
-        "location": "Indonesia",
-        "challenge": "Pag-navigate sa magkakaibang rehiyon na may iba't ibang transportasyon at komunikasyon na imprastraktura, tinitiyak ang pare-parehong kalidad ng data sa buong malalayong lugar na may limitadong koneksyon sa internet."
+        "location": "Jakarta at Yogyakarta",
+        "challenge": "Upang magsagawa ng survey sa maraming lokasyon sa limitadong panahon."
       },
       {
-        "title": "Pamamahala ng mga tao gamit ang pinakabagong device",
-        "client": "Global FMCG",
+        "title": "Gamit ang pinakabagong device",
+        "client": "FMCG manufacturer",
         "type": "Online survey at sample product testing",
-        "period": "Kabuuang 6 araw",
+        "period": "6 araw",
         "size": "24 samples",
-        "location": "Pilipinas",
-        "challenge": "Pagko-coordinate ng device distribution at pagsasanay sa mga participant sa iba't ibang lokasyon habang pinapanatili ang integridad ng data at tinitiyak na lahat ng participant ay maaaring epektibong gamitin ang pinakabagong teknolohiya."
+        "challenge": "Ang mga respondent ay kailangang manood ng stimulus videos gamit ang device na hindi nila pamilyar."
       },
       {
-        "title": "Paghahandle ng survey kasama ang nanay at mga bata",
-        "client": "Global FMCG",
+        "title": "Kasama ang nanay at mga bata",
+        "client": "FMCG manufacturer",
         "type": "Online survey",
-        "period": "Kabuuang 3 araw",
+        "period": "3 araw",
         "size": "18 magulang at 18 bata",
-        "location": "Singapore",
-        "challenge": "Pamamahala ng dual-participant surveys na nangangailangan ng koordinasyon sa pagitan ng mga magulang at bata, tinitiyak ang age-appropriate engagement at pagpapanatili ng mataas na response rates mula sa parehong demograpiya."
+        "challenge": "Ang mga magulang ay hindi nagbigay ng pansin sa mga brand habang ang mga bata ay gumagalaw."
+      },
+      {
+        "title": "Sa maraming bansa",
+        "client": "FMCG manufacturer",
+        "type": "Depth Interview (House visit, Online survey at Online diary)",
+        "period": "14 araw",
+        "size": "19 samples",
+        "location": "Jakarta, Indonesia at Manila, Philippines",
+        "challenge": "Ang mga nanay na may mga bata ay kinakailangang mag-maintain ng diary ng kanilang pagluluto para sa kanilang pamilya araw-araw."
+      },
+      {
+        "title": "Targeting sa partikular na subjects",
+        "client": "Pharmaceutical company",
+        "type": "Depth Interview (House visit, Online survey at Online diary)",
+        "period": "14 araw",
+        "size": "24 patients at 4 experts samples",
+        "location": "Jakarta at Surabaya",
+        "challenge": "Post surgery patients recruitment na kakalabas lang mula sa ospital."
       }
     ]
   }

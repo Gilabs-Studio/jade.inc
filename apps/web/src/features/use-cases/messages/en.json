@@ -15,31 +15,47 @@
     "subtitle": "Real-world examples of our successful projects across multiple industries and locations",
     "items": [
       {
-        "title": "Conducting survey across Indonesia",
-        "client": "Major manufacturer",
-        "type": "In-depth interview (Home visit and Store shadowing)",
-        "period": "Total 7 days",
+        "title": "In multiple locations",
+        "client": "Device manufacturer",
+        "type": "Focus group interview (House visit and store shadowing)",
+        "period": "7 days",
         "size": "9 samples",
-        "location": "Indonesia",
-        "challenge": "Navigating diverse regions with varying transportation and communication infrastructure, ensuring consistent data quality across remote areas with limited internet connectivity."
+        "location": "Jakarta and Yogyakarta",
+        "challenge": "To conduct a survey in multiple locations in a limited period."
       },
       {
-        "title": "Managing people with the latest device",
-        "client": "Global FMCG",
+        "title": "With the latest device",
+        "client": "FMCG manufacturer",
         "type": "Online survey and sample product testing",
-        "period": "Total 6 days",
+        "period": "6 days",
         "size": "24 samples",
-        "location": "Philippines",
-        "challenge": "Coordinating device distribution and training participants across multiple locations while maintaining data integrity and ensuring all participants could effectively use the latest technology."
+        "challenge": "Respondents needed to watch stimulus videos with a device they are not familiar."
       },
       {
-        "title": "Handling survey with mom and kids",
-        "client": "Global FMCG",
+        "title": "With mom and kids",
+        "client": "FMCG manufacturer",
         "type": "Online survey",
-        "period": "Total 3 days",
+        "period": "3 days",
         "size": "18 parents and 18 kids",
-        "location": "Singapore",
-        "challenge": "Managing dual-participant surveys requiring coordination between parents and children, ensuring age-appropriate engagement and maintaining high response rates from both demographics."
+        "challenge": "Parents didn't pay attention to brands while kids were moving around."
+      },
+      {
+        "title": "In multiple countries",
+        "client": "FMCG manufacturer",
+        "type": "Depth Interview (House visit, Online survey and Online diary)",
+        "period": "14 days",
+        "size": "19 samples",
+        "location": "Jakarta, Indonesia and Manila, Philippines",
+        "challenge": "Moms with kids were required to keep a diary of their cooking for their family everyday."
+      },
+      {
+        "title": "Targeting specific subjects",
+        "client": "Pharmaceutical company",
+        "type": "Depth Interview (House visit, Online survey and Online diary)",
+        "period": "14 days",
+        "size": "24 patients and 4 experts samples",
+        "location": "Jakarta and Surabaya",
+        "challenge": "Post surgery patients recruitment who was just discharged from hospital."
       }
     ]
   }
