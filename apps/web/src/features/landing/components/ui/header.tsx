@@ -2,6 +2,7 @@
 
 import { Link } from "@/src/lib/i18n";
 import { LanguageSwitcher } from "./language-switcher";
+import { TextRoll } from "./text-roll";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -23,35 +24,30 @@ const Header = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          <Link
-            href="/marketing-research"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Services
+          <Link href="/marketing-research" className="group">
+            <TextRoll className="text-sm font-medium group-hover:text-primary transition-colors">
+              Services
+            </TextRoll>
           </Link>
-          <Link
-            href="/use-cases"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Solutions
+          <Link href="/use-cases" className="group">
+            <TextRoll className="text-sm font-medium group-hover:text-primary transition-colors">
+              Solutions
+            </TextRoll>
           </Link>
-          <Link
-            href="/travel-arrangement"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Travel
+          <Link href="/travel-arrangement" className="group">
+            <TextRoll className="text-sm font-medium group-hover:text-primary transition-colors">
+              Travel
+            </TextRoll>
           </Link>
-          <Link
-            href="/drone-pilot-service"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Drones
+          <Link href="/drone-pilot-service" className="group">
+            <TextRoll className="text-sm font-medium group-hover:text-primary transition-colors">
+              Drones
+            </TextRoll>
           </Link>
-          <Link
-            href="#contact"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Contact
+          <Link href="#contact" className="group">
+            <TextRoll className="text-sm font-medium group-hover:text-primary transition-colors">
+              Contact
+            </TextRoll>
           </Link>
           <LanguageSwitcher />
         </div>
