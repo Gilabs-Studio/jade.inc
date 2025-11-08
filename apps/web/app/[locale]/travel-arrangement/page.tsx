@@ -50,7 +50,7 @@ const ServicesSection = dynamic(
     ),
   {
     loading: () => (
-      <section className="py-32 bg-muted/30" id="services">
+      <section className="py-32" id="services">
         <div className="container">
           <div className="text-center mb-16">
             <div className="h-12 w-48 bg-muted rounded-lg mx-auto mb-4 animate-pulse" />

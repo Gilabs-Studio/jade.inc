@@ -1,20 +1,22 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Lottie from "lottie-react";
+import Lottie, { type LottieRefCurrentProps } from "lottie-react";
 import { useRef, useState, useEffect } from "react";
+import type { TravelService, LottieAnimationData } from "@/src/features/travel-arrangement/types";
 
 interface ServiceItemProps {
-  service: { title: string; description: string };
-  animationData: any;
+  service: TravelService;
+  animationData: LottieAnimationData | null;
+  className?: string;
 }
 
-const ServiceItem = ({ service, animationData }: ServiceItemProps) => {
-  const lottieRef = useRef<any>(null);
+const ServiceItem = ({ service, animationData, className = "" }: ServiceItemProps) => {
+  const lottieRef = useRef<LottieRefCurrentProps | null>(null);
 
   return (
     <div
-      className="group relative bg-card border rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-primary/50"
+      className={`group relative bg-card border rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:border-primary/50 ${className}`}
       onMouseEnter={() => {
         lottieRef.current?.play();
       }}
@@ -48,24 +50,24 @@ const ServiceItem = ({ service, animationData }: ServiceItemProps) => {
 
 const ServicesSection = () => {
   const t = useTranslations("travelArrangement");
-  const services = t.raw("services.items");
+  const services = t.raw("services.items") as TravelService[];
 
-  const [animations, setAnimations] = useState<any[]>([]);
+  const [animations, setAnimations] = useState<(LottieAnimationData | null)[]>([]);
 
   useEffect(() => {
     const loadAnimations = async () => {
+      // Try to load travel-related animations, fallback to empty if not available
+      const animationPromises = [
+        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
+        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
+        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
+        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
+        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
+      ];
       try {
-        // Try to load travel-related animations, fallback to empty if not available
-        const animationPromises = [
-          fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-          fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-          fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-          fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-          fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-        ];
         const loadedAnimations = await Promise.all(animationPromises);
         setAnimations(loadedAnimations);
-      } catch (error) {
+      } catch {
         // If animations fail to load, continue without them
         setAnimations([]);
       }
@@ -74,8 +76,20 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="py-32 bg-muted/30" id="services">
-      <div className="container">
+    <section className="relative py-32 overflow-hidden" id="services">
+      {/* Background webp fixed */}
+      <div
+        className="absolute inset-0 bg-cover bg-no-repeat bg-fixed opacity-4 -z-10"
+        style={{
+          backgroundImage: "url('/bg.webp')",
+          backgroundPosition: "center -700px",
+        }}
+      />
+
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzg0Y2MxNiIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40 -z-10"
+      />
+
+      <div className="container relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">
             {t("services.title")}
@@ -85,18 +99,25 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {services.map(
-            (
-              service: { title: string; description: string },
-              idx: number
-            ) => (
-              <ServiceItem
-                key={idx}
-                service={service}
-                animationData={animations[idx]}
-              />
-            )
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {services.slice(0, 3).map((service: TravelService, idx: number) => (
+            <ServiceItem
+              key={idx}
+              service={service}
+              animationData={animations[idx] ?? null}
+            />
+          ))}
+          {services.length > 3 && (
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col md:flex-row lg:justify-center lg:gap-8 gap-8">
+              {services.slice(3).map((service: TravelService, idx: number) => (
+                <div key={idx + 3} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] lg:max-w-sm">
+                  <ServiceItem
+                    service={service}
+                    animationData={animations[idx + 3] ?? null}
+                  />
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </div>
