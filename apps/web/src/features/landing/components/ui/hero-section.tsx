@@ -9,7 +9,7 @@ const HeroSection = () => {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-no-repeat opacity-4 -z-10"
      style={{ backgroundImage: "url('/bg.webp')", backgroundPosition: "center -700px" }} />
 

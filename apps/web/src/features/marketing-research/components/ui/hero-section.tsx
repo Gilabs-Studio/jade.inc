@@ -6,7 +6,7 @@ const HeroSection = () => {
   const t = useTranslations("marketingResearch");
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-no-repeat opacity-4 -z-10"
         style={{

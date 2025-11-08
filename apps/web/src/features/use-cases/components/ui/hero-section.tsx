@@ -6,7 +6,7 @@ const HeroSection = () => {
   const t = useTranslations("useCasesPage");
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10 -z-10" />
       

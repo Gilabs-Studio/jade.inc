@@ -129,29 +129,10 @@ const OnlineSurveysSection = dynamic(
   }
 );
 
-const SoutheastAsiaMapSection = dynamic(
-  () =>
-    import("@/src/features/marketing-research/components/ui").then(
-      (mod) => ({ default: mod.SoutheastAsiaMap })
-    ),
-  {
-    loading: () => (
-      <section className="py-32">
-        <div className="container">
-          <div className="h-12 w-64 bg-muted rounded-lg mx-auto mb-16 animate-pulse" />
-          <div className="h-6 w-96 bg-muted rounded-lg mx-auto mb-8 animate-pulse" />
-          <div className="bg-card border rounded-xl p-12 h-96 animate-pulse max-w-5xl mx-auto" />
-        </div>
-      </section>
-    ),
-  }
-);
-
 export default function MarketingResearchPage() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <SoutheastAsiaMapSection />
       <MarketsSection />
       <ServicesSection />
       <ProjectManagementSection />
