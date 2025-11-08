@@ -56,13 +56,13 @@ const ServicesSection = () => {
 
   useEffect(() => {
     const loadAnimations = async () => {
-      // Try to load travel-related animations, fallback to empty if not available
+      // Load specific icons for each service
       const animationPromises = [
-        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
-        fetch("/icon/travel.json").then((res) => res.json()).catch(() => null),
+        fetch("/icon/take-off.json").then((res) => res.json()).catch(() => null), // Transportations
+        fetch("/icon/hotel-rating-building-stars.json").then((res) => res.json()).catch(() => null), // Accommodations
+        fetch("/icon/ticket.json").then((res) => res.json()).catch(() => null), // Ticketing
+        fetch("/icon/route.json").then((res) => res.json()).catch(() => null), // Itinerary
+        fetch("/icon/food-delivery.json").then((res) => res.json()).catch(() => null), // FNB & More
       ];
       try {
         const loadedAnimations = await Promise.all(animationPromises);
