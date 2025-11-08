@@ -1,52 +1,98 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
+interface LocationItem {
+  title: string;
+  description: string;
+  icon: string;
+}
 
 const MarketsSection = () => {
   const t = useTranslations("marketingResearch");
+  const locations = t.raw("markets.locations") as LocationItem[];
 
   return (
-    <section className="py-32">
+    <section className="py-32 bg-muted/30">
       <div className="container">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">
-              {t("markets.title")}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t("markets.description")}
-            </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">
+            {t("markets.title")}
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {t("markets.description")}
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto mb-16">
+          {/* Map Section */}
+          <div className="relative rounded-2xl overflow-hidden border shadow-lg bg-card">
+            <div className="aspect-[4/3] relative">
+              <Image
+                src="/map.webp"
+                alt="Service Locations Map"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
 
-          <div className="bg-card border rounded-xl p-8 md:p-12 hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-12 w-12 rounded-lg bg-primary flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6 text-primary-foreground"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold font-roman">
-                {t("markets.philippines.title")}
-              </h3>
-            </div>
-            <p className="text-muted-foreground leading-relaxed">
-              {t("markets.philippines.description")}
-            </p>
+          {/* Locations List */}
+          <div className="space-y-6">
+            {locations.map((location) => (
+              <LocationCard key={location.title} location={location} index={0} />
+            ))}
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+interface LocationCardProps {
+  location: LocationItem;
+  index: number;
+}
+
+const LocationCard = ({ location, index }: LocationCardProps) => {
+  const getFlagPath = () => {
+    const title = location.title.toLowerCase();
+    if (title.includes("indonesia")) {
+      return "/icon/indonesia-flag.svg";
+    } else if (title.includes("singapore") || title.includes("singapura")) {
+      return "/icon/singapore-flag.svg";
+    } else if (title.includes("philippines") || title.includes("filipina")) {
+      return "/icon/philippines-flag.svg";
+    }
+    return null;
+  };
+
+  const flagPath = getFlagPath();
+
+  return (
+    <div className="group relative bg-card border rounded-xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:border-primary/50">
+      <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+
+      <div className="relative z-10 flex items-start gap-4">
+        {flagPath && (
+          <div className="shrink-0 w-16 h-16 flex items-center justify-center">
+            <Image
+              src={flagPath}
+              alt={`${location.title} flag`}
+              width={64}
+              height={64}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        )}
+        <div className="flex-1">
+          <h3 className="text-2xl font-bold mb-2 font-roman">{location.title}</h3>
+          <p className="text-muted-foreground leading-relaxed">{location.description}</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

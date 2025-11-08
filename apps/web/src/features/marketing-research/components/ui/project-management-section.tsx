@@ -10,37 +10,37 @@ const ProjectManagementSection = () => {
   }>;
 
   return (
-    <section className="py-32">
+    <section className="py-32 bg-muted/30">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-roman">
             {t("projectManagement.title")}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t("projectManagement.subtitle")}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {categories.map((category, idx) => (
             <div
               key={idx}
-              className="group relative bg-card border rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:border-primary/50"
+              className="group relative bg-card border rounded-xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:border-primary/50"
             >
-              <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
 
               <div className="relative z-10">
-                <h3 className="text-lg font-bold mb-4 font-roman text-primary">
+                <h3 className="text-xl font-bold mb-6 font-roman text-primary">
                   {category.category}
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {category.items.map((item, itemIdx) => (
                     <li
                       key={itemIdx}
-                      className="flex items-start gap-2 text-muted-foreground"
+                      className="flex items-start gap-3 text-muted-foreground group/item"
                     >
                       <svg
-                        className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                        className="w-5 h-5 text-primary mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -52,7 +52,7 @@ const ProjectManagementSection = () => {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span>{item}</span>
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>

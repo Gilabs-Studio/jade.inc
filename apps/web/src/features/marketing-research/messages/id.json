@@ -6,13 +6,24 @@
   "markets": {
     "title": "Cakupan Pasar Kami",
     "description": "Jade Inc. merekrut untuk tujuan Riset Pasar untuk membantu Anda terhubung dengan Konsumen dan Ahli di pasar Indonesia, Filipina dan Singapura. Kami melakukan rekrutmen responden secara tatap muka baik melalui referensi atau menggunakan basis data kami.",
-    "philippines": {
-      "title": "Pasar Filipina",
-      "description": "Pasar Filipina kami mencakup Manila, Cebu, Davao, dan banyak lainnya, yang berbicara dialek berbeda seperti Tagalog dan Cebuano."
-    }
+    "locations": [
+      {
+        "title": "Indonesia",
+        "description": "Cakupan pasar Indonesia kami mencakup kota-kota besar termasuk Jakarta, Surabaya, Bandung, Medan, dan banyak lagi. Kami memahami lanskap budaya yang beragam dan dialek lokal untuk memastikan riset pasar yang efektif."
+      },
+      {
+        "title": "Singapura",
+        "description": "Operasi Singapura kami mencakup seluruh negara kota, memberikan akses ke pasar multikultural dan sangat terhubung. Kami memfasilitasi riset di berbagai demografi dan sektor bisnis."
+      },
+      {
+        "title": "Filipina",
+        "description": "Pasar Filipina kami mencakup Manila, Cebu, Davao, dan banyak lainnya, yang berbicara dialek berbeda seperti Tagalog dan Cebuano."
+      }
+    ]
   },
   "services": {
     "title": "Yang Kami Lakukan",
+    "subtitle": "Layanan riset pasar komprehensif yang disesuaikan dengan kebutuhan Anda",
     "items": [
       {
         "title": "IDIs | FGDs | CLTs | Survei Online"

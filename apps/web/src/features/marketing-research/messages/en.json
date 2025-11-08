@@ -6,13 +6,24 @@
   "markets": {
     "title": "Our Market Coverage",
     "description": "Jade Inc. recruits for Market Research purposes to help you connect to Consumers and Experts in Indonesia, Philippines and Singapore market. We do our respondents recruitment face to face either via referral or using our data base.",
-    "philippines": {
-      "title": "Philippines Market",
-      "description": "Our Philippines market covers Manila, Cebu, Davao, and many others, that speaks different dialect such as Tagalog and Cebuano."
-    }
+    "locations": [
+      {
+        "title": "Indonesia",
+        "description": "Our Indonesia market coverage spans across major cities including Jakarta, Surabaya, Bandung, Medan, and many more. We understand the diverse cultural landscape and local dialects to ensure effective market research."
+      },
+      {
+        "title": "Singapore",
+        "description": "Our Singapore operations cover the entire city-state, providing access to a multicultural and highly connected market. We facilitate research across different demographics and business sectors."
+      },
+      {
+        "title": "Philippines",
+        "description": "Our Philippines market covers Manila, Cebu, Davao, and many others, that speaks different dialect such as Tagalog and Cebuano."
+      }
+    ]
   },
   "services": {
     "title": "Things We Do",
+    "subtitle": "Comprehensive marketing research services tailored to your needs",
     "items": [
       {
         "title": "IDIs | FGDs | CLTs | Online Survey"
