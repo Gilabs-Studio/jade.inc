@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { Link } from "@/src/lib/i18n";
+import { CountUp } from "./count-up";
 
 const HeroSection = () => {
   const t = useTranslations("hero");
@@ -33,15 +34,21 @@ const HeroSection = () => {
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">3</div>
+              <div className="text-4xl font-bold text-primary mb-2">
+                <CountUp value={3} duration={1500} />
+              </div>
               <p className="text-muted-foreground">Countries</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">9+</div>
+              <div className="text-4xl font-bold text-primary mb-2">
+                <CountUp value="9+" duration={1500} />
+              </div>
               <p className="text-muted-foreground">Years Experience</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2">
+                <CountUp value="500+" duration={2000} />
+              </div>
               <p className="text-muted-foreground">Projects</p>
             </div>
           </div>

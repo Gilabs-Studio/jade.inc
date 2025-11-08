@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { CountUp } from "./count-up";
 
 interface AboutSectionProps {
   mainImage?: {
@@ -97,7 +98,7 @@ const AboutSection = ({
               (item: { label: string; value: string }, idx: number) => (
                 <div className="flex flex-col gap-2" key={item.label + idx}>
                   <span className="text-4xl font-semibold md:text-5xl text-primary">
-                    {item.value}
+                    <CountUp value={item.value} duration={2000} delay={idx * 100} />
                   </span>
                   <p className="text-sm md:text-base">{item.label}</p>
                 </div>
