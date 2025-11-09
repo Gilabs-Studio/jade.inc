@@ -10,11 +10,11 @@ export const createBlogSchema = z.object({
     slug: z.string().min(1, 'Slug is required'),
     excerpt: z.string().optional(),
     content: z.string().min(1, 'Content is required'), // Markdown content
-    featuredImage: z.string().url().optional(),
+    featuredImage: z.string().url('Featured image must be a valid URL'), // Required
     status: z.enum(['draft', 'published', 'archived']).default('draft'),
     publishedAt: z.string().datetime().optional(),
     tags: z.array(z.string()).optional(),
-    categoryId: z.string().uuid().optional(),
+    categoryIds: z.array(z.string().uuid()).min(1, 'At least one category is required'), // Many-to-many
   }),
 });
 
@@ -31,7 +31,7 @@ export const updateBlogSchema = z.object({
     status: z.enum(['draft', 'published', 'archived']).optional(),
     publishedAt: z.string().datetime().optional(),
     tags: z.array(z.string()).optional(),
-    categoryId: z.string().uuid().optional(),
+    categoryIds: z.array(z.string().uuid()).optional(), // Many-to-many
   }),
 });
 
@@ -53,7 +53,13 @@ export const listBlogsSchema = z.object({
     limit: z.string().optional().transform((val) => (val ? parseInt(val, 10) : 10)),
     search: z.string().optional(),
     status: z.enum(['draft', 'published', 'archived']).optional(),
-    categoryId: z.string().uuid().optional(),
+    categoryIds: z
+      .union([z.string().uuid(), z.array(z.string().uuid())])
+      .optional()
+      .transform((val) => {
+        if (!val) return undefined;
+        return Array.isArray(val) ? val : [val];
+      }),
     tag: z.string().optional(),
   }),
 });
@@ -68,17 +74,27 @@ export type CreateBlogInput = z.infer<typeof createBlogSchema>['body'];
 export type UpdateBlogInput = z.infer<typeof updateBlogSchema>['body'];
 export type ListBlogsQuery = z.infer<typeof listBlogsSchema>['query'];
 
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  color: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Blog {
   id: string;
   title: string;
   slug: string;
   excerpt: string | null;
   content: string; // Markdown content
-  featuredImage: string | null;
+  featuredImage: string; // Required
   status: 'draft' | 'published' | 'archived';
   publishedAt: string | null;
   tags: string[];
-  categoryId: string | null;
+  categories: Category[]; // Many-to-many relationship
   authorId: string;
   createdAt: string;
   updatedAt: string;

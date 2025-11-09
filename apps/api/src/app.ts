@@ -9,6 +9,8 @@ import authRoutes from './modules/auth/auth.routes.js';
 import usersRoutes from './modules/users/users.routes.js';
 import blogRoutes from './modules/blog/blog.routes.js';
 import contentRoutes from './modules/content/content.routes.js';
+import categoriesRoutes from './modules/categories/categories.routes.js';
+import uploadRoutes from './modules/upload/upload.routes.js';
 
 /**
  * Express app configuration
@@ -52,6 +54,8 @@ export function createApp(): Express {
   app.use(`${apiPrefix}/users`, usersRoutes);
   app.use(`${apiPrefix}/blogs`, blogRoutes);
   app.use(`${apiPrefix}/content`, contentRoutes);
+  app.use(`${apiPrefix}/categories`, categoriesRoutes);
+  app.use(`${apiPrefix}/upload`, uploadRoutes);
 
   return app;
 }

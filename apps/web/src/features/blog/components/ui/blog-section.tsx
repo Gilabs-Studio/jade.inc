@@ -14,10 +14,18 @@ export const BlogSection = () => {
     let mounted = true;
     (async () => {
       setLoading(true);
-      const featured = await BlogService.featured();
-      if (mounted) {
-        setPosts(featured);
-        setLoading(false);
+      try {
+        const featured = await BlogService.featured();
+        if (mounted) {
+          setPosts(featured);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error('Failed to load featured posts:', error);
+        if (mounted) {
+          setPosts([]);
+          setLoading(false);
+        }
       }
     })();
     return () => {

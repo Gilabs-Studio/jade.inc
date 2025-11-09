@@ -18,14 +18,23 @@ export const BlogList = () => {
     let mounted = true;
     (async () => {
       setLoading(true);
-      const [p, c] = await Promise.all([
-        BlogService.listPosts(),
-        BlogService.listCategories(),
-      ]);
-      if (mounted) {
-        setPosts(p);
-        setCategories(c);
-        setLoading(false);
+      try {
+        const [p, c] = await Promise.all([
+          BlogService.listPosts(),
+          BlogService.listCategories(),
+        ]);
+        if (mounted) {
+          setPosts(p);
+          setCategories(c);
+          console.log('Posts loaded:', p?.length || 0);
+          console.log('Categories loaded:', c?.length || 0, c); // Debug log
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error('Error loading blog data:', error);
+        if (mounted) {
+          setLoading(false);
+        }
       }
     })();
     return () => {
@@ -40,13 +49,20 @@ export const BlogList = () => {
 
   // Filter posts by selected category
   const filteredPosts = selectedCategory
-    ? posts?.filter((post) => post.category === selectedCategory) ?? []
+    ? posts?.filter((post) => {
+        // Check if post has categories array and matches selected category slug
+        if (post.categories && post.categories.length > 0) {
+          return post.categories.some(cat => cat.slug === selectedCategory);
+        }
+        // Fallback to category string (backward compatibility)
+        return post.category === selectedCategory;
+      }) ?? []
     : posts ?? [];
 
   const totalPostsCount = posts?.length ?? 0;
   const featuredPost = filteredPosts[0];
-  const rightSidePosts = filteredPosts.slice(1, 5); // 4 posts for right sidebar
-  const leftBottomPosts = filteredPosts.slice(5); // Remaining posts for left bottom
+  const rightSidePosts = filteredPosts.slice(1, 3); // 2 posts for right sidebar (reduced from 4)
+  const leftBottomPosts = filteredPosts.slice(1); // All posts except featured (for left side)
   const totalLeft = leftBottomPosts.length;
   const totalPages = Math.max(1, Math.ceil(totalLeft / pageSize));
   const start = (currentPage - 1) * pageSize;
@@ -152,22 +168,38 @@ export const BlogList = () => {
                 </button>
 
                 {/* Individual Categories */}
-                {categories?.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setSelectedCategory(category.name)}
-                    className={`w-full flex items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium transition-all ${
-                      selectedCategory === category.name
-                        ? "bg-primary text-primary-foreground shadow-sm"
-                        : "hover:bg-muted"
-                    }`}
-                  >
-                    <span>{category.name}</span>
-                    <span className={`text-xs ${selectedCategory === category.name ? "opacity-90" : "text-muted-foreground"}`}>
-                      {category.count}
-                    </span>
-                  </button>
-                ))}
+                {categories && categories.length > 0 ? (
+                  categories.map((category) => {
+                    // Calculate actual count of posts in this category
+                    const categoryCount = posts?.filter((post) => {
+                      if (post.categories && post.categories.length > 0) {
+                        return post.categories.some(cat => cat.slug === category.slug);
+                      }
+                      return post.category === category.name;
+                    }).length || 0;
+
+                    return (
+                      <button
+                        key={category.id}
+                        onClick={() => setSelectedCategory(category.slug)}
+                        className={`w-full flex items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium transition-all ${
+                          selectedCategory === category.slug
+                            ? "bg-primary text-primary-foreground shadow-sm"
+                            : "hover:bg-muted"
+                        }`}
+                      >
+                        <span>{category.name}</span>
+                        <span className={`text-xs ${selectedCategory === category.slug ? "opacity-90" : "text-muted-foreground"}`}>
+                          {categoryCount}
+                        </span>
+                      </button>
+                    );
+                  })
+                ) : (
+                  <p className="text-sm text-muted-foreground text-center py-4">
+                    No categories available
+                  </p>
+                )}
               </div>
             )}
           </div>

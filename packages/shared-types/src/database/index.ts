@@ -28,6 +28,19 @@ export interface User {
 }
 
 /**
+ * Category domain type (camelCase)
+ */
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  color: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+/**
  * Blog domain type (camelCase)
  */
 export interface Blog {
@@ -36,11 +49,11 @@ export interface Blog {
   slug: string;
   excerpt: string | null;
   content: string; // Markdown
-  featuredImage: string | null;
+  featuredImage: string; // Required
   status: ContentStatus;
   publishedAt: string | null;
   tags: string[];
-  categoryId: string | null;
+  categories: Category[]; // Many-to-many relationship
   authorId: string;
   createdAt: string;
   updatedAt: string;

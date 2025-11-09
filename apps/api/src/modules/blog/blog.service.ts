@@ -1,12 +1,40 @@
 import { supabaseAdmin } from '../../config/supabase.js';
-import { mapBlogRow } from '../../shared/utils/db-mapper.util.js';
+import { mapBlogRow, mapCategoryRow } from '../../shared/utils/db-mapper.util.js';
 import { NotFoundError, ConflictError, ForbiddenError } from '../../shared/errors/app-error.js';
 import type { CreateBlogInput, UpdateBlogInput, ListBlogsQuery, Blog } from './blog.types.js';
+import type { Category as SharedCategory } from '@packages/shared-types';
 
 /**
  * Blog service - handles blog management logic
  */
 export class BlogService {
+  /**
+   * Helper: Fetch categories for a blog
+   */
+  private async fetchBlogCategories(blogId: string): Promise<SharedCategory[]> {
+    const { data, error } = await supabaseAdmin
+      .from('blog_categories')
+      .select('category_id')
+      .eq('blog_id', blogId);
+
+    if (error || !data || data.length === 0) {
+      return [];
+    }
+
+    const categoryIds = data.map((row) => row.category_id);
+
+    const { data: categories, error: categoriesError } = await supabaseAdmin
+      .from('categories')
+      .select('*')
+      .in('id', categoryIds);
+
+    if (categoriesError || !categories) {
+      return [];
+    }
+
+    return categories.map(mapCategoryRow);
+  }
+
   /**
    * Create a new blog post
    */
@@ -16,11 +44,11 @@ export class BlogService {
       slug,
       excerpt,
       content,
-      featuredImage,
+      featuredImage, // Required
       status = 'draft',
       publishedAt,
       tags = [],
-      categoryId,
+      categoryIds = [], // Many-to-many
     } = input;
 
     // Check if slug already exists
@@ -34,6 +62,19 @@ export class BlogService {
       throw new ConflictError('Slug already exists', 'SLUG_EXISTS');
     }
 
+    // Validate categories exist
+    if (categoryIds.length > 0) {
+      const { data: categories, error: categoriesError } = await supabaseAdmin
+        .from('categories')
+        .select('id')
+        .in('id', categoryIds);
+
+      if (categoriesError || !categories || categories.length !== categoryIds.length) {
+        throw new NotFoundError('One or more categories not found', 'CATEGORY');
+      }
+    }
+
+    // Create blog
     const { data, error } = await supabaseAdmin
       .from('blogs')
       .insert({
@@ -41,11 +82,10 @@ export class BlogService {
         slug,
         excerpt,
         content, // Store as markdown
-        featured_image: featuredImage,
+        featured_image: featuredImage, // Required
         status,
         published_at: publishedAt || (status === 'published' ? new Date().toISOString() : null),
         tags,
-        category_id: categoryId,
         author_id: authorId,
       })
       .select()
@@ -55,7 +95,28 @@ export class BlogService {
       throw new Error('Failed to create blog post');
     }
 
-    return mapBlogRow(data);
+    // Create blog_categories relationships
+    if (categoryIds.length > 0) {
+      const blogCategories = categoryIds.map((categoryId) => ({
+        blog_id: data.id,
+        category_id: categoryId,
+      }));
+
+      const { error: blogCategoriesError } = await supabaseAdmin
+        .from('blog_categories')
+        .insert(blogCategories);
+
+      if (blogCategoriesError) {
+        // Rollback: delete blog if categories insertion fails
+        await supabaseAdmin.from('blogs').delete().eq('id', data.id);
+        throw new Error('Failed to create blog categories');
+      }
+    }
+
+    // Fetch categories
+    const categories = await this.fetchBlogCategories(data.id);
+
+    return mapBlogRow(data, categories);
   }
 
   /**
@@ -72,7 +133,8 @@ export class BlogService {
       throw new NotFoundError('Blog post not found', 'BLOG');
     }
 
-    return mapBlogRow(data);
+    const categories = await this.fetchBlogCategories(id);
+    return mapBlogRow(data, categories);
   }
 
   /**
@@ -90,7 +152,8 @@ export class BlogService {
       throw new NotFoundError('Blog post not found', 'BLOG');
     }
 
-    return mapBlogRow(data);
+    const categories = await this.fetchBlogCategories(data.id);
+    return mapBlogRow(data, categories);
   }
 
   /**
@@ -102,7 +165,7 @@ export class BlogService {
     page: number;
     limit: number;
   }> {
-    const { page = 1, limit = 10, search, status, categoryId, tag } = query;
+    const { page = 1, limit = 10, search, status, categoryIds, tag } = query;
     const offset = (page - 1) * limit;
 
     let queryBuilder = supabaseAdmin
@@ -130,8 +193,26 @@ export class BlogService {
       queryBuilder = queryBuilder.eq('status', status);
     }
 
-    if (categoryId) {
-      queryBuilder = queryBuilder.eq('category_id', categoryId);
+    // Filter by categories (many-to-many)
+    if (categoryIds && categoryIds.length > 0) {
+      // Get blog IDs that have any of the specified categories
+      const { data: blogCategories } = await supabaseAdmin
+        .from('blog_categories')
+        .select('blog_id')
+        .in('category_id', categoryIds);
+
+      if (blogCategories && blogCategories.length > 0) {
+        const blogIds = [...new Set(blogCategories.map((bc) => bc.blog_id))];
+        queryBuilder = queryBuilder.in('id', blogIds);
+      } else {
+        // No blogs match the categories, return empty result
+        return {
+          blogs: [],
+          total: 0,
+          page,
+          limit,
+        };
+      }
     }
 
     if (tag) {
@@ -148,7 +229,13 @@ export class BlogService {
       throw new Error('Failed to fetch blogs');
     }
 
-    const blogs: Blog[] = (data || []).map(mapBlogRow);
+    // Fetch categories for all blogs
+    const blogs: Blog[] = await Promise.all(
+      (data || []).map(async (blog) => {
+        const categories = await this.fetchBlogCategories(blog.id);
+        return mapBlogRow(blog, categories);
+      })
+    );
 
     return {
       blogs,
@@ -207,7 +294,6 @@ export class BlogService {
     }
     if (input.publishedAt) updateData.published_at = input.publishedAt;
     if (input.tags) updateData.tags = input.tags;
-    if (input.categoryId !== undefined) updateData.category_id = input.categoryId;
 
     const { data, error } = await supabaseAdmin
       .from('blogs')
@@ -220,7 +306,44 @@ export class BlogService {
       throw new Error('Failed to update blog post');
     }
 
-    return mapBlogRow(data);
+    // Update blog_categories if categoryIds provided
+    if (input.categoryIds !== undefined) {
+      // Validate categories exist
+      if (input.categoryIds.length > 0) {
+        const { data: categories, error: categoriesError } = await supabaseAdmin
+          .from('categories')
+          .select('id')
+          .in('id', input.categoryIds);
+
+        if (categoriesError || !categories || categories.length !== input.categoryIds.length) {
+          throw new NotFoundError('One or more categories not found', 'CATEGORY');
+        }
+      }
+
+      // Delete existing blog_categories
+      await supabaseAdmin.from('blog_categories').delete().eq('blog_id', id);
+
+      // Insert new blog_categories
+      if (input.categoryIds.length > 0) {
+        const blogCategories = input.categoryIds.map((categoryId) => ({
+          blog_id: id,
+          category_id: categoryId,
+        }));
+
+        const { error: blogCategoriesError } = await supabaseAdmin
+          .from('blog_categories')
+          .insert(blogCategories);
+
+        if (blogCategoriesError) {
+          throw new Error('Failed to update blog categories');
+        }
+      }
+    }
+
+    // Fetch categories
+    const categories = await this.fetchBlogCategories(id);
+
+    return mapBlogRow(data, categories);
   }
 
   /**

@@ -17,6 +17,57 @@ Migrations diorganisir dalam beberapa file untuk kemudahan maintenance:
 
 File **`20240101000000_initial_schema.sql`** berisi semua migrations dalam satu file untuk kemudahan setup pertama kali.
 
+## Seed Data
+
+File **`seed.sql`** berisi data awal untuk development dan testing:
+
+- **6 Categories**: Technology, Design, Business, Lifestyle, Tutorial, News
+- **6 Blog Posts**: Sample blog posts dengan featured images dan categories (many-to-many)
+- **Blog-Category Relationships**: Many-to-many relationships antara blogs dan categories
+
+### Prerequisites
+
+Sebelum menjalankan seed data, pastikan:
+
+1. Migrations sudah dijalankan (tabel sudah dibuat)
+2. Admin user sudah dibuat dengan email `admin@example.com` via Supabase Auth atau API
+
+### Running Seed Data
+
+**Option 1: Using Supabase CLI (Recommended)**
+
+```bash
+# Reset database (runs migrations + seed.sql)
+supabase db reset
+
+# Or run seed manually
+supabase db execute -f supabase/seed.sql
+```
+
+**Option 2: Manual Execution via Supabase Dashboard**
+
+1. Buka Supabase Dashboard → SQL Editor
+2. Copy dan paste isi file `supabase/seed.sql`
+3. Klik "Run" untuk menjalankan
+
+**Option 3: Using psql**
+
+```bash
+psql -h <your-db-host> -U postgres -d postgres -f supabase/seed.sql
+```
+
+### Seed Data Contents
+
+- **Categories**: 6 sample categories dengan warna dan deskripsi
+- **Blogs**: 6 sample blog posts (5 published, 1 draft) dengan:
+  - Featured images (required)
+  - Multiple categories per blog (many-to-many)
+  - Markdown content
+  - Tags
+  - Published dates
+
+**Note:** Jika admin user belum ada, blog seed data akan di-skip dengan warning message.
+
 ## Database Schema
 
 ### Tables

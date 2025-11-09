@@ -36,14 +36,22 @@ export const BlogDetail = ({ post }: { post: BlogPost }) => {
       <div className="max-w-[1270px] mx-auto">
         {/* Cover Image */}
         <div className="relative aspect-[16/9] mb-10 rounded-xl overflow-hidden border bg-muted">
-          <Image
-            src={post.coverImage}
-            alt={post.title}
-            className="object-cover"
-            fill
-            priority
-            sizes="(max-width: 720px) 100vw, 720px"
-          />
+          {post.coverImage ? (
+            <Image
+              src={post.coverImage}
+              alt={post.title}
+              className="object-cover"
+              fill
+              priority
+              sizes="(max-width: 720px) 100vw, 720px"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+              <svg className="w-20 h-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+          )}
         </div>
 
         {/* Article Header */}
@@ -55,14 +63,20 @@ export const BlogDetail = ({ post }: { post: BlogPost }) => {
           {/* Author and Meta */}
           <div className="flex items-center justify-between flex-wrap gap-4 pb-6 border-b">
             <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10 rounded-full overflow-hidden">
-                <Image
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  className="object-cover"
-                  fill
-                  sizes="40px"
-                />
+              <div className="relative h-10 w-10 rounded-full overflow-hidden bg-muted">
+                {post.author.avatar ? (
+                  <Image
+                    src={post.author.avatar}
+                    alt={post.author.name}
+                    className="object-cover"
+                    fill
+                    sizes="40px"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-primary/10 text-primary text-sm font-medium">
+                    {post.author.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
               </div>
               <div>
                 <p className="font-medium">{post.author.name}</p>

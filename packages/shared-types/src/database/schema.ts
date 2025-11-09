@@ -54,11 +54,10 @@ export interface Database {
           slug: string;
           excerpt: string | null;
           content: string;
-          featured_image: string | null;
+          featured_image: string; // Required (NOT NULL)
           status: ContentStatus;
           published_at: string | null;
           tags: string[];
-          category_id: string | null;
           author_id: string;
           created_at: string;
           updated_at: string;
@@ -69,11 +68,10 @@ export interface Database {
           slug: string;
           excerpt?: string | null;
           content: string;
-          featured_image?: string | null;
+          featured_image: string; // Required
           status?: ContentStatus;
           published_at?: string | null;
           tags?: string[];
-          category_id?: string | null;
           author_id: string;
           created_at?: string;
           updated_at?: string;
@@ -84,14 +82,59 @@ export interface Database {
           slug?: string;
           excerpt?: string | null;
           content?: string;
-          featured_image?: string | null;
+          featured_image?: string;
           status?: ContentStatus;
           published_at?: string | null;
           tags?: string[];
-          category_id?: string | null;
           author_id?: string;
           created_at?: string;
           updated_at?: string;
+        };
+      };
+      categories: {
+        Row: {
+          id: string;
+          name: string;
+          slug: string;
+          description: string | null;
+          color: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          name: string;
+          slug: string;
+          description?: string | null;
+          color?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          name?: string;
+          slug?: string;
+          description?: string | null;
+          color?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      blog_categories: {
+        Row: {
+          blog_id: string;
+          category_id: string;
+          created_at: string;
+        };
+        Insert: {
+          blog_id: string;
+          category_id: string;
+          created_at?: string;
+        };
+        Update: {
+          blog_id?: string;
+          category_id?: string;
+          created_at?: string;
         };
       };
       content: {

@@ -74,6 +74,14 @@ export class ResponseUtil {
     return res.status(204).send();
   }
 
+  static badRequest(
+    res: Response,
+    message: string,
+    errorCode?: string
+  ): Response<ApiResponse> {
+    return this.error(res, message, 400, errorCode);
+  }
+
   static unauthorized(
     res: Response,
     message: string = 'Unauthorized'

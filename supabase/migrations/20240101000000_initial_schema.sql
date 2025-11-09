@@ -24,6 +24,17 @@ CREATE TABLE IF NOT EXISTS public.users (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+-- Categories table
+CREATE TABLE IF NOT EXISTS public.categories (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  name TEXT NOT NULL,
+  slug TEXT UNIQUE NOT NULL,
+  description TEXT,
+  color TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
 -- Blogs table
 CREATE TABLE IF NOT EXISTS public.blogs (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -31,15 +42,22 @@ CREATE TABLE IF NOT EXISTS public.blogs (
   slug TEXT UNIQUE NOT NULL,
   excerpt TEXT,
   content TEXT NOT NULL,
-  featured_image TEXT,
+  featured_image TEXT NOT NULL, -- Required
   status TEXT NOT NULL DEFAULT 'draft' 
     CHECK (status IN ('draft', 'published', 'archived')),
   published_at TIMESTAMPTZ,
   tags TEXT[] DEFAULT '{}',
-  category_id UUID,
   author_id UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Blog Categories junction table (Many-to-Many)
+CREATE TABLE IF NOT EXISTS public.blog_categories (
+  blog_id UUID NOT NULL REFERENCES public.blogs(id) ON DELETE CASCADE,
+  category_id UUID NOT NULL REFERENCES public.categories(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (blog_id, category_id)
 );
 
 -- Content table
@@ -70,6 +88,14 @@ CREATE TABLE IF NOT EXISTS public.content (
 CREATE INDEX IF NOT EXISTS idx_users_email ON public.users(email);
 CREATE INDEX IF NOT EXISTS idx_users_role ON public.users(role);
 CREATE INDEX IF NOT EXISTS idx_users_created_at ON public.users(created_at DESC);
+
+-- Categories indexes
+CREATE INDEX IF NOT EXISTS idx_categories_slug ON public.categories(slug);
+CREATE INDEX IF NOT EXISTS idx_categories_name ON public.categories(name);
+
+-- Blog categories junction table indexes
+CREATE INDEX IF NOT EXISTS idx_blog_categories_blog_id ON public.blog_categories(blog_id);
+CREATE INDEX IF NOT EXISTS idx_blog_categories_category_id ON public.blog_categories(category_id);
 
 -- Blogs indexes
 CREATE INDEX IF NOT EXISTS idx_blogs_slug ON public.blogs(slug);
@@ -118,6 +144,12 @@ CREATE TRIGGER update_users_updated_at
   FOR EACH ROW
   EXECUTE FUNCTION public.update_updated_at_column();
 
+DROP TRIGGER IF EXISTS update_categories_updated_at ON public.categories;
+CREATE TRIGGER update_categories_updated_at
+  BEFORE UPDATE ON public.categories
+  FOR EACH ROW
+  EXECUTE FUNCTION public.update_updated_at_column();
+
 DROP TRIGGER IF EXISTS update_blogs_updated_at ON public.blogs;
 CREATE TRIGGER update_blogs_updated_at
   BEFORE UPDATE ON public.blogs
@@ -135,6 +167,8 @@ CREATE TRIGGER update_content_updated_at
 -- ============================================================================
 
 ALTER TABLE public.users ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.categories ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.blog_categories ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.blogs ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.content ENABLE ROW LEVEL SECURITY;
 
@@ -147,6 +181,40 @@ DROP POLICY IF EXISTS "Admins can read all users" ON public.users;
 CREATE POLICY "Admins can read all users" ON public.users FOR SELECT USING (EXISTS (SELECT 1 FROM public.users WHERE id = auth.uid() AND role = 'admin'));
 DROP POLICY IF EXISTS "Admins can update all users" ON public.users;
 CREATE POLICY "Admins can update all users" ON public.users FOR UPDATE USING (EXISTS (SELECT 1 FROM public.users WHERE id = auth.uid() AND role = 'admin'));
+
+-- Categories policies
+DROP POLICY IF EXISTS "Anyone can read categories" ON public.categories;
+CREATE POLICY "Anyone can read categories" ON public.categories FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Authors can insert categories" ON public.categories;
+CREATE POLICY "Authors can insert categories" ON public.categories FOR INSERT WITH CHECK (
+  EXISTS (SELECT 1 FROM public.users WHERE id = auth.uid() AND role IN ('admin', 'editor', 'author'))
+);
+DROP POLICY IF EXISTS "Editors and admins can update categories" ON public.categories;
+CREATE POLICY "Editors and admins can update categories" ON public.categories FOR UPDATE USING (
+  EXISTS (SELECT 1 FROM public.users WHERE id = auth.uid() AND role IN ('admin', 'editor'))
+);
+DROP POLICY IF EXISTS "Admins can delete categories" ON public.categories;
+CREATE POLICY "Admins can delete categories" ON public.categories FOR DELETE USING (
+  EXISTS (SELECT 1 FROM public.users WHERE id = auth.uid() AND role = 'admin')
+);
+
+-- Blog categories policies
+DROP POLICY IF EXISTS "Anyone can read blog_categories" ON public.blog_categories;
+CREATE POLICY "Anyone can read blog_categories" ON public.blog_categories FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Authors can manage blog_categories for own blogs" ON public.blog_categories;
+CREATE POLICY "Authors can manage blog_categories for own blogs" ON public.blog_categories 
+  FOR ALL USING (
+    EXISTS (
+      SELECT 1 FROM public.blogs 
+      WHERE id = blog_categories.blog_id 
+      AND author_id = auth.uid()
+    )
+  );
+DROP POLICY IF EXISTS "Editors and admins can manage all blog_categories" ON public.blog_categories;
+CREATE POLICY "Editors and admins can manage all blog_categories" ON public.blog_categories 
+  FOR ALL USING (
+    EXISTS (SELECT 1 FROM public.users WHERE id = auth.uid() AND role IN ('admin', 'editor'))
+  );
 
 -- Blogs policies
 DROP POLICY IF EXISTS "Anyone can read published blogs" ON public.blogs;

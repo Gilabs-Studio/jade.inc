@@ -3,7 +3,7 @@
  * Maps database types (snake_case) to domain types (camelCase)
  */
 
-import type { User, Blog, Content } from '@packages/shared-types';
+import type { User, Blog, Content, Category } from '@packages/shared-types';
 
 /**
  * Map database user row to domain User type
@@ -29,23 +29,49 @@ export function mapUserRow(row: {
 }
 
 /**
- * Map database blog row to domain Blog type
+ * Map database category row to domain Category type
  */
-export function mapBlogRow(row: {
+export function mapCategoryRow(row: {
   id: string;
-  title: string;
+  name: string;
   slug: string;
-  excerpt: string | null;
-  content: string;
-  featured_image: string | null;
-  status: string;
-  published_at: string | null;
-  tags: string[];
-  category_id: string | null;
-  author_id: string;
+  description: string | null;
+  color: string | null;
   created_at: string;
   updated_at: string;
-}): Blog {
+}): Category {
+  return {
+    id: row.id,
+    name: row.name,
+    slug: row.slug,
+    description: row.description,
+    color: row.color,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
+/**
+ * Map database blog row to domain Blog type
+ * Note: categories should be fetched separately and passed in
+ */
+export function mapBlogRow(
+  row: {
+    id: string;
+    title: string;
+    slug: string;
+    excerpt: string | null;
+    content: string;
+    featured_image: string; // Required
+    status: string;
+    published_at: string | null;
+    tags: string[];
+    author_id: string;
+    created_at: string;
+    updated_at: string;
+  },
+  categories: Category[] = []
+): Blog {
   return {
     id: row.id,
     title: row.title,
@@ -56,7 +82,7 @@ export function mapBlogRow(row: {
     status: row.status as Blog['status'],
     publishedAt: row.published_at,
     tags: row.tags || [],
-    categoryId: row.category_id,
+    categories,
     authorId: row.author_id,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
