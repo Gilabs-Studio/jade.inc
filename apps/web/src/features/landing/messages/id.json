@@ -93,6 +93,14 @@
     }
   },
   "footer": {
+    "contactUs": {
+      "title": "Hubungi Kami",
+      "form": {
+        "emailPlaceholder": "Masukkan Email",
+        "messagePlaceholder": "Tulis Pesan...",
+        "submit": "Kirim"
+      }
+    },
     "address": {
       "title": "Jade Inc",
       "line1": "Office Suite A529,",

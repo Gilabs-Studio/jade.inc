@@ -109,28 +109,6 @@ const AboutSection = dynamic(
 
 // BlogSection is client component; load immediately (above-the-fold enough) without dynamic skeleton for clarity.
 
-const ContactSection = dynamic(
-  () =>
-    import("@/src/features/landing/components/ui").then(
-      (mod) => ({ default: mod.ContactSection })
-    ),
-  {
-    loading: () => (
-      <section className="py-32 bg-muted/30" id="contact">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="h-12 w-64 bg-muted rounded-lg mx-auto mb-4 animate-pulse" />
-              <div className="h-6 w-96 bg-muted rounded-lg mx-auto animate-pulse" />
-            </div>
-            <div className="bg-card border rounded-xl p-8 h-96 animate-pulse" />
-          </div>
-        </div>
-      </section>
-    ),
-  }
-);
-
 export default function LandingPage() {
   return (
     <main className="min-h-screen">
@@ -139,7 +117,6 @@ export default function LandingPage() {
       <UseCasesSection />
       <AboutSection />
       <BlogSection />
-      <ContactSection />
     </main>
   );
 }

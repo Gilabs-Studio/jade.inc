@@ -3,15 +3,69 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/src/lib/i18n";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useState, useEffect } from "react";
+import { BlogService } from "@/src/features/blog/services/blog";
+import type { BlogPost } from "@/src/features/blog/types";
 
 const Footer = () => {
   const t = useTranslations("footer");
-  const recentPosts = t.raw("recentPosts.items");
+  const [formState, setFormState] = useState({
+    email: "",
+    message: "",
+  });
+  const [recentPosts, setRecentPosts] = useState<BlogPost[]>([]);
+  const [loadingPosts, setLoadingPosts] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const posts = await BlogService.listPosts();
+        if (mounted) {
+          // Get latest 3 posts
+          setRecentPosts(posts.slice(0, 3));
+          setLoadingPosts(false);
+        }
+      } catch (error) {
+        console.error("Failed to load recent posts:", error);
+        if (mounted) {
+          setRecentPosts([]);
+          setLoadingPosts(false);
+        }
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const formatDate = (dateString: string) => {
+    try {
+      const date = new Date(dateString);
+      return new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }).format(date);
+    } catch {
+      return dateString;
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const whatsappMessage = `Email: ${formState.email}. Message: ${formState.message}`;
+    const whatsappUrl = `https://wa.me/${t("contact.whatsapp").replace(/[^0-9]/g, "")}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
     <footer className="bg-card border-t border-thin">
       <div className="container py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div>
             <div className="mb-6">
               <Image
@@ -22,126 +76,153 @@ const Footer = () => {
                 className="h-5 w-auto"
               />
             </div>
-            <address className="not-italic text-muted-foreground space-y-1 text-sm">
+            <address className="not-italic text-muted-foreground space-y-1 text-sm mb-6">
               <p>{t("address.line1")}</p>
               <p>{t("address.line2")}</p>
               <p>{t("address.line3")}</p>
             </address>
-          </div>
-
-          <div>
-            <h4 className="font-medium mb-4 text-sm">Quick Links</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link
-                  href="#services"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#use-cases"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Use Cases
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#about"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium mb-4 text-sm">{t("recentPosts.title")}</h4>
-            <ul className="space-y-2.5">
-              {recentPosts.map(
-                (post: { title: string; date: string }, idx: number) => (
-                  <li key={post.title}>
-                    <a
-                      href="#"
-                      className="block text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <p className="text-sm font-medium">{post.title}</p>
-                      <p className="text-xs text-muted-foreground/70 mt-0.5">
-                        {post.date}
-                      </p>
-                    </a>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium mb-4 text-sm">Connect With Us</h4>
-            <div className="space-y-3">
+            <div className="flex items-center gap-3">
               <a
                 href={`https://wa.me/${t("contact.whatsapp").replace(/[^0-9]/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="WhatsApp"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                 </svg>
-                <span>{t("contact.whatsapp")}</span>
               </a>
 
               <a
                 href="https://www.instagram.com/jadeinc.id/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Instagram"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
-                <span>Instagram</span>
               </a>
 
               <a
                 href="https://www.facebook.com/jadeinc.id"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Facebook"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
-                <span>Facebook</span>
               </a>
             </div>
+          </div>
+
+          <div>
+            <h4 className="font-medium mb-4 text-sm">{t("recentPosts.title")}</h4>
+            {loadingPosts ? (
+              <ul className="space-y-3">
+                {[1, 2, 3].map((i) => (
+                  <li key={i} className="flex gap-3 animate-pulse">
+                    <div className="w-16 h-16 bg-muted rounded flex-shrink-0" />
+                    <div className="flex-1 space-y-2">
+                      <div className="h-4 bg-muted rounded w-3/4" />
+                      <div className="h-3 bg-muted rounded w-1/2" />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : recentPosts.length > 0 ? (
+              <ul className="space-y-3">
+                {recentPosts.map((post) => (
+                  <li key={post.id}>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="flex gap-3 group"
+                    >
+                      {/* Thumbnail Image */}
+                      <div className="relative w-16 h-16 flex-shrink-0 overflow-hidden rounded-md bg-muted">
+                        {post.coverImage ? (
+                          <Image
+                            src={post.coverImage}
+                            alt={post.title}
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            fill
+                            sizes="64px"
+                            priority={false}
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                          </div>
+                        )}
+                      </div>
+                      {/* Content */}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-1">
+                          {post.title}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {formatDate(post.publishedAt)}
+                        </p>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                No recent posts available
+              </p>
+            )}
+          </div>
+
+          <div>
+            <h4 className="font-medium mb-4 text-sm">{t("contactUs.title")}</h4>
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <Input
+                type="email"
+                required
+                placeholder={t("contactUs.form.emailPlaceholder")}
+                value={formState.email}
+                onChange={(e) =>
+                  setFormState({ ...formState, email: e.target.value })
+                }
+                className="h-10 text-sm"
+              />
+              <Textarea
+                required
+                placeholder={t("contactUs.form.messagePlaceholder")}
+                value={formState.message}
+                onChange={(e) =>
+                  setFormState({ ...formState, message: e.target.value })
+                }
+                rows={4}
+                className="resize-none text-sm"
+              />
+              <Button type="submit" className="w-full h-10 text-sm">
+                {t("contactUs.form.submit")}
+              </Button>
+            </form>
           </div>
         </div>
 

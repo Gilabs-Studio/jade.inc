@@ -93,6 +93,14 @@
     }
   },
   "footer": {
+    "contactUs": {
+      "title": "Makipag-ugnayan sa Amin",
+      "form": {
+        "emailPlaceholder": "Maglagay ng Email",
+        "messagePlaceholder": "Sumulat ng Mensahe...",
+        "submit": "Ipadala"
+      }
+    },
     "address": {
       "title": "Jade Inc",
       "line1": "Office Suite A529,",

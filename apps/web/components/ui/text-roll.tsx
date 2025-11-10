@@ -23,6 +23,7 @@ const TextRoll: React.FC<TextRollProps> = ({
       whileHover="hovered"
       className={cn("relative block overflow-hidden", className)}
       style={{
+       
         lineHeight: 0.75,
       }}
     >
@@ -37,9 +38,11 @@ const TextRoll: React.FC<TextRollProps> = ({
               variants={{
                 initial: {
                   y: 0,
+                  opacity: 1,
                 },
                 hovered: {
                   y: "-100%",
+                  opacity: 0,
                 },
               }}
               transition={{
@@ -65,9 +68,11 @@ const TextRoll: React.FC<TextRollProps> = ({
               variants={{
                 initial: {
                   y: "100%",
+                  opacity: 0,
                 },
                 hovered: {
                   y: 0,
+                  opacity: 1,
                 },
               }}
               transition={{

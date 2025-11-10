@@ -93,6 +93,14 @@
     }
   },
   "footer": {
+    "contactUs": {
+      "title": "Contact Us",
+      "form": {
+        "emailPlaceholder": "Enter an Email",
+        "messagePlaceholder": "Write a Message...",
+        "submit": "Send"
+      }
+    },
     "address": {
       "title": "Jade Inc",
       "line1": "Office Suite A529,",
