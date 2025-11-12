@@ -5,8 +5,12 @@ export const BlogHeroSection = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Indonesia background image with subtle overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat opacity-5 -z-10"
-        style={{ backgroundImage: "url('/bg.webp')", backgroundPosition: "center -700px" }}
+        className="absolute inset-0 bg-cover bg-no-repeat opacity-10 -z-10"
+        style={{ 
+          backgroundImage: "url('/bg.webp')",
+          backgroundPosition: "center top",
+          backgroundPositionY: "-200px",
+        }}
       />
       
       {/* Gradient overlay matching Solutions page */}
@@ -37,11 +41,11 @@ export const BlogHeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-roman bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 font-roman bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
             Insights & Field Knowledge
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
             Actionable articles on research coordination, technology enablement, travel logistics, and operational best practices across Southeast Asia—written by the Jade Inc team.
           </p>
 

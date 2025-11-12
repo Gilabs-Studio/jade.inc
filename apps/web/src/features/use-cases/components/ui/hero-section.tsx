@@ -6,7 +6,17 @@ const HeroSection = () => {
   const t = useTranslations("useCasesPage");
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-no-repeat opacity-10 -z-10"
+        style={{
+          backgroundImage: "url('/bg.webp')",
+          backgroundPosition: "center top",
+          backgroundPositionY: "-200px",
+        }}
+      />
+
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10 -z-10" />
       
@@ -35,11 +45,11 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-roman bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 font-roman bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
             {t("hero.title")}
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
             {t("hero.description")}
           </p>
 
